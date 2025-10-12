@@ -1,3 +1,4 @@
+this is a godot game which the hero is a magical creature needs to find his origin and his parents so he is in an adventure to find them
 <a id="readme-top"></a>
 
 <!-- SHIELDS -->
