@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c27eilbxoilw"]
+
+[ext_resource type="Texture2D" uid="uid://cl48uuu0ei0sd" path="res://assets/Fogo_1 (3).png" id="1_ktous"]
+[ext_resource type="Script" uid="uid://bgg1rh3j0esqn" path="res://scripts/flame.gd" id="1_x50ei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x50ei"]
+atlas = ExtResource("1_ktous")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmmd7"]
+atlas = ExtResource("1_ktous")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp4rw"]
+atlas = ExtResource("1_ktous")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyk1v"]
+atlas = ExtResource("1_ktous")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhela"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x50ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmmd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp4rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyk1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cfuo"]
+radius = 6.0
+height = 18.0
+
+[node name="flame" type="Area2D"]
+script = ExtResource("1_x50ei")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, -24)
+sprite_frames = SubResource("SpriteFrames_fhela")
+autoplay = "default"
+frame_progress = 0.204014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1cfuo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
