@@ -1,6 +1,5 @@
-[gd_scene load_steps=31 format=4 uid="uid://dqsqj6dg3d6on"]
+[gd_scene load_steps=26 format=4 uid="uid://dqsqj6dg3d6on"]
 
-[ext_resource type="Script" uid="uid://bnqua7ofot3bk" path="res://scripts/game_maneger.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://c5avbxl26ic0e" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://daexndunwyuaf" path="res://assets/Tileset/pixil-frame-0.png" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://c27tgkc3wmnpt" path="res://assets/Tileset/tileset.png" id="3_lbhrr"]
@@ -14,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dfeqb1mre25c" path="res://assets/purple/purple_L2.png" id="12_trtic"]
 [ext_resource type="Texture2D" uid="uid://clmoob6gdf833" path="res://assets/purple/purple_L3.png" id="13_ir15t"]
 [ext_resource type="Texture2D" uid="uid://be56h208vscfn" path="res://assets/purple/purple_L4.png" id="14_ca42v"]
+
+[sub_resource type="GDScript" id="GDScript_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
@@ -177,58 +178,14 @@ _data = {
 &"move": SubResource("Animation_dinhu")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
-texture = ExtResource("11_kvpfn")
-0:0/size_in_atlas = Vector2i(40, 15)
-0:0/0 = 0
-0:0/0/z_index = -10
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssvqc"]
-texture = ExtResource("12_trtic")
-0:0/size_in_atlas = Vector2i(40, 15)
-0:0/0 = 0
-0:0/0/z_index = -9
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_264po"]
-texture = ExtResource("13_ir15t")
-0:0/size_in_atlas = Vector2i(40, 15)
-0:0/0 = 0
-0:0/0/z_index = -8
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kice"]
-texture = ExtResource("14_ca42v")
-0:0/size_in_atlas = Vector2i(40, 15)
-0:0/0 = 0
-0:0/0/z_index = -7
-
-[sub_resource type="TileSet" id="TileSet_kvuet"]
-sources/1 = SubResource("TileSetAtlasSource_rysoc")
-sources/2 = SubResource("TileSetAtlasSource_ssvqc")
-sources/3 = SubResource("TileSetAtlasSource_264po")
-sources/4 = SubResource("TileSetAtlasSource_1kice")
-
 [node name="game" type="Node2D"]
 
 [node name="Game maneger" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_gee14")
+script = SubResource("GDScript_kvuet")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-19, 9)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-limit_bottom = 150
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-
-[node name="coinsc" type="Label" parent="Player"]
-offset_left = -109.0
-offset_top = -66.0
-offset_right = 15.0
-offset_bottom = -43.0
-text = "0"
-horizontal_alignment = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
@@ -317,8 +274,27 @@ offset_top = -141.0
 offset_right = 3062.0
 offset_bottom = -118.0
 text = "You won !!"
+metadata/_edit_use_anchors_ = true
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
-position = Vector2(53, 53)
-tile_map_data = PackedByteArray("AAD4//3/AQAAAAAAAAD5//3/AgAAAAAAAAD3//3/AwAAAAAAAAD6//3/BAAAAAAAAAAfAP3/AQAAAAAAAAA9AP3/AQAAAAAAAABjAP3/AQAAAAAAAAB1APD/BAAAAAAAAACOAPD/AQAAAAAAAACLAPz/AQAAAAAAAACLAP3/AQAAAAAAAACxAP3/AQAAAAAAAACxAPD/AwAAAAAAAAAiAP3/AgAAAAAAAAAhAP3/AwAAAAAAAAAgAP3/AwAAAAAAAAAdAP3/BAAAAAAAAABEAP3/BAAAAAAAAABqAP3/BAAAAAAAAACQAP3/BAAAAAAAAAC1AP3/BAAAAAAAAACNAPD/BAAAAAAAAABIAP3/AwAAAAAAAABvAP3/AwAAAAAAAACWAP3/AwAAAAAAAAC0AP3/AwAAAAAAAACNAO//AwAAAAAAAAB0APD/AwAAAAAAAAD3/+//AQAAAAAAAAAHAO//AQAAAAAAAAD3/wsAAQAAAAAAAAAGAAoAAQAAAAAAAAAtAAwAAQAAAAAAAAAvAO7/AQAAAAAAAAA=")
-tile_set = SubResource("TileSet_kvuet")
+[node name="bg" type="Node" parent="."]
+
+[node name="PurpleL2" type="Sprite2D" parent="bg"]
+position = Vector2(25.5599, -5)
+scale = Vector2(1.504, 1.504)
+texture = ExtResource("12_trtic")
+
+[node name="PurpleL3" type="Sprite2D" parent="bg"]
+position = Vector2(14.28, 6.28001)
+scale = Vector2(1.504, 1.504)
+texture = ExtResource("13_ir15t")
+
+[node name="PurpleL4" type="Sprite2D" parent="bg"]
+position = Vector2(14.28, 6.28001)
+scale = Vector2(1.504, 1.504)
+texture = ExtResource("14_ca42v")
+
+[node name="PurpleL1" type="Sprite2D" parent="bg"]
+z_index = -4
+position = Vector2(25.56, -4.99999)
+scale = Vector2(1.504, 1.504)
+texture = ExtResource("11_kvpfn")
