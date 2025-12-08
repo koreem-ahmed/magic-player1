@@ -1,7 +1,6 @@
 extends Area2D
 
-@onready var game_maneger: Node = %"Game maneger"
-
 func _on_body_entered(body: Node2D) -> void:
-	Global.score  += 1
+	if Global.mana < 180:
+		Global.mana  += 70
 	queue_free()

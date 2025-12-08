@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfjmfw08w4553"]
 
-[ext_resource type="Script" uid="uid://ctaymb8652rpb" path="res://player_bullet.gd" id="1_46jqs"]
+[ext_resource type="Script" uid="uid://ctaymb8652rpb" path="res://scripts/player_bullet.gd" id="1_46jqs"]
 [ext_resource type="Texture2D" uid="uid://b32rjydfp1csn" path="res://assets/main/Sprite Sheet/Attack 2 - bullet.png" id="2_0cue5"]
 
 [node name="player_bullet" type="Node2D"]
@@ -10,3 +10,17 @@ script = ExtResource("1_46jqs")
 texture = ExtResource("2_0cue5")
 region_enabled = true
 region_rect = Rect2(77.566, 55.4607, 44.9482, 21.7819)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(21, -2, 4, -9, -21, -4, -9, 2, -19, 10, 11, 10, 17, 3)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 2)
+scale = Vector2(2.45, 1.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

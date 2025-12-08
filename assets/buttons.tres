@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bhd87hhhi56b6"]
+
+[ext_resource type="FontFile" uid="uid://dmfwsgo1yauif" path="res://assets/PixelifySans-Regular.ttf" id="1_86k24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86k24"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wttau"]
+bg_color = Color(0.137255, 0.121569, 0.25098, 1)
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fagpp"]
+bg_color = Color(0.137255, 0.121569, 0.25098, 1)
+border_width_top = 15
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+Button/font_sizes/font_size = 35
+Button/fonts/font = ExtResource("1_86k24")
+Button/styles/focus = SubResource("StyleBoxFlat_86k24")
+Button/styles/hover = SubResource("StyleBoxFlat_wttau")
+Button/styles/normal = SubResource("StyleBoxFlat_wttau")
+Button/styles/pressed = SubResource("StyleBoxFlat_fagpp")

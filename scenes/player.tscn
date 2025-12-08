@@ -1,12 +1,16 @@
-[gd_scene load_steps=65 format=3 uid="uid://c5avbxl26ic0e"]
+[gd_scene load_steps=83 format=3 uid="uid://c5avbxl26ic0e"]
 
 [ext_resource type="Script" uid="uid://dhirqw3ug7mg3" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://coxvfhk6np1e5" path="res://assets/main/Sprite Sheet/Idle.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://kfnbdmx2p5hx" path="res://assets/main/Sprite Sheet/Attack 1.png" id="2_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://d3ej1v8gqynkv" path="res://assets/main/Sprite Sheet/Dash.png" id="4_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://cydcshd8s6bfx" path="res://assets/main/Sprite Sheet/Death.png" id="4_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://ciwvxag6micao" path="res://assets/main/Sprite Sheet/Attack 2.png" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://cqhk3nxmva624" path="res://assets/main/Sprite Sheet/Jump.png" id="8_f1ej7"]
+[ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/health_bars.tscn" id="8_smehm"]
+[ext_resource type="FontFile" uid="uid://dmfwsgo1yauif" path="res://assets/PixelifySans-Regular.ttf" id="8_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b0pblw4gd4m2r" path="res://assets/main/Sprite Sheet/Run.png" id="9_oprun"]
+[ext_resource type="Script" uid="uid://bmcsm80lgcko2" path="res://scripts/mana_bar.gd" id="9_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("2_tuyoq")
@@ -75,6 +79,54 @@ region = Rect2(1872, 0, 144, 144)
 [sub_resource type="AtlasTexture" id="AtlasTexture_51ujp"]
 atlas = ExtResource("6_fjrip")
 region = Rect2(2016, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e8lb"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gdjj"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc3ue"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxlsd"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha2mi"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(576, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apa73"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(720, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74r1k"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(864, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8svfe"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(1008, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk41t"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(1152, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuw3a"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(1296, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8txt3"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(1440, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w11d"]
+atlas = ExtResource("4_3v2ag")
+region = Rect2(1584, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -292,6 +344,47 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6e8lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gdjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc3ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxlsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha2mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apa73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74r1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8svfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk41t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuw3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8txt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w11d")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qhqgy")
 }, {
 "duration": 1.0,
@@ -371,7 +464,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2b1d")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 10.0
 }, {
@@ -429,16 +522,21 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(31, 16)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4r1p"]
+bg_color = Color(0.137255, 0.160784, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2wvv"]
+bg_color = Color(0.243137, 1, 0.843137, 1)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1000
+collision_layer = 29
 script = ExtResource("1_g2els")
 
 [node name="player_animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fulsm")
-animation = &"attack2"
+animation = &"dash"
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -19)
@@ -453,6 +551,7 @@ offset_left = 121.0
 offset_top = -97.0
 offset_right = 140.0
 offset_bottom = -74.0
+theme_override_fonts/font = ExtResource("8_y4r1p")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -467,7 +566,25 @@ shape = SubResource("RectangleShape2D_fjrip")
 disabled = true
 
 [node name="attack_2_marker" type="Marker2D" parent="."]
-position = Vector2(21, -5)
+position = Vector2(19, -5)
+
+[node name="health-bars" parent="." instance=ExtResource("8_smehm")]
+offset_left = -141.0
+offset_top = -98.0
+offset_right = -68.0
+offset_bottom = -83.0
+
+[node name="mana-bar" type="ProgressBar" parent="."]
+offset_left = -141.0
+offset_top = -81.0
+offset_right = -69.0
+offset_bottom = -65.0
+theme_override_styles/background = SubResource("StyleBoxFlat_y4r1p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2wvv")
+max_value = 180.0
+value = 20.0
+show_percentage = false
+script = ExtResource("9_ur7pv")
 
 [connection signal="animation_finished" from="player_animation" to="." method="_on_player_animation_animation_finished"]
-[connection signal="body_shape_entered" from="attack_1_area" to="." method="_on_attack_1_area_body_shape_entered"]
+[connection signal="body_entered" from="attack_1_area" to="." method="_on_attack_1_area_body_entered"]

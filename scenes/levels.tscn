@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpwnt0mpt1yln"]
+
+[ext_resource type="Script" uid="uid://dri03js85n05e" path="res://scripts/levels.gd" id="1_byla0"]
+[ext_resource type="Texture2D" uid="uid://ckp3pmiabb7io" path="res://assets/purple/purple_L1.png" id="2_r44b6"]
+[ext_resource type="Texture2D" uid="uid://dfeqb1mre25c" path="res://assets/purple/purple_L2.png" id="3_1jewu"]
+[ext_resource type="Texture2D" uid="uid://clmoob6gdf833" path="res://assets/purple/purple_L3.png" id="4_ibiju"]
+[ext_resource type="Texture2D" uid="uid://be56h208vscfn" path="res://assets/purple/purple_L4.png" id="5_00hpi"]
+[ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="6_6g56m"]
+[ext_resource type="FontFile" uid="uid://dmfwsgo1yauif" path="res://assets/PixelifySans-Regular.ttf" id="6_r44b6"]
+
+[node name="Levels" type="Node2D"]
+script = ExtResource("1_byla0")
+
+[node name="PurpleL1" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(599, 331)
+scale = Vector2(2.01875, 2.784)
+texture = ExtResource("2_r44b6")
+
+[node name="PurpleL2" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(571, 330)
+scale = Vector2(2.792, 2.792)
+texture = ExtResource("3_1jewu")
+
+[node name="PurpleL3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(573, 336)
+scale = Vector2(2.708, 2.708)
+texture = ExtResource("4_ibiju")
+
+[node name="PurpleL4" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(575, 328.5)
+scale = Vector2(2.80938, 2.732)
+texture = ExtResource("5_00hpi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 445.0
+offset_top = 130.0
+offset_right = 689.0
+offset_bottom = 227.0
+theme_override_fonts/font = ExtResource("6_r44b6")
+theme_override_font_sizes/font_size = 80
+text = "Levels"
+
+[node name="level 1" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 273.0
+offset_right = 376.0
+offset_bottom = 368.0
+theme = ExtResource("6_6g56m")
+text = "1"
+
+[node name="level 2" type="Button" parent="."]
+offset_left = 514.0
+offset_top = 273.0
+offset_right = 626.0
+offset_bottom = 368.0
+theme = ExtResource("6_6g56m")
+text = "2"
+
+[node name="level 3" type="Button" parent="."]
+offset_left = 738.0
+offset_top = 263.0
+offset_right = 850.0
+offset_bottom = 358.0
+theme = ExtResource("6_6g56m")
+text = "3
+"
+
+[node name="level 2 bocker" type="ColorRect" parent="."]
+offset_left = 536.0
+offset_top = 267.0
+offset_right = 549.0
+offset_bottom = 393.0
+rotation = -0.487566
+color = Color(0.331181, 0.353291, 0.353292, 1)
+
+[node name="level 2 bocker2" type="ColorRect" parent="."]
+offset_left = 586.0
+offset_top = 265.0
+offset_right = 599.0
+offset_bottom = 391.0
+rotation = 0.407419
+color = Color(0.331181, 0.353291, 0.353292, 1)
+
+[node name="level 3 bocker" type="ColorRect" parent="."]
+offset_left = 761.0
+offset_top = 256.0
+offset_right = 774.0
+offset_bottom = 382.0
+rotation = -0.487566
+color = Color(0.331181, 0.353291, 0.353292, 1)
+
+[node name="level 3 bocker2" type="ColorRect" parent="."]
+offset_left = 811.0
+offset_top = 251.0
+offset_right = 824.0
+offset_bottom = 377.0
+rotation = 0.407419
+color = Color(0.331181, 0.353291, 0.353292, 1)
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level 2" to="." method="_on_level_2_pressed"]

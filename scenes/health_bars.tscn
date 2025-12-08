@@ -8,7 +8,7 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42st7"]
 bg_color = Color(0, 1, 0, 1)
 
-[node name="health-bars" type="ProgressBar"]
+[node name="health-bar" type="ProgressBar"]
 offset_right = 63.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_kaihb")
