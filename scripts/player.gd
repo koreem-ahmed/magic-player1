@@ -132,3 +132,5 @@ func shoot_bullet():
 
 func _on_attack_1_area_body_entered(body: Node2D) -> void:
 	body.health -= 20
+
+#f.dslkjfsdfsdfs

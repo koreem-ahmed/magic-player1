@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Transition="*res://scenes/transition.tscn"
 
 [editor_plugins]
 
