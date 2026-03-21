@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c88g7fv1t2w1u"]
+
+[ext_resource type="Script" uid="uid://c1n5s35bbi1j7" path="res://scripts/mainmenu.gd" id="1_8pq7m"]
+[ext_resource type="FontFile" uid="uid://dc4bx7gjbwxy0" path="res://assets/rainyhearts.ttf" id="3_8pq7m"]
+[ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="4_rs0be"]
+[ext_resource type="Shader" uid="uid://dfo6hu5o8ekyj" path="res://bg-lay2.gdshader" id="4_ybr10"]
+[ext_resource type="Texture2D" uid="uid://dvoo30h4frj7q" path="res://assets/Snow/snow-bg 1.png" id="5_12qgc"]
+[ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/Snow/snow-bg 2.png" id="6_v16a6"]
+[ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/Snow/snow-bg 3.png" id="7_lcxfl"]
+[ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/Snow/snow-bg 4.png" id="8_jaw82"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45xpy"]
+shader = ExtResource("4_ybr10")
+
+[node name="Node2D" type="Control" unique_id=1981337073]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = 112.0
+offset_right = -25.0
+offset_bottom = 112.0
+script = ExtResource("1_8pq7m")
+
+[node name="Node" type="Node" parent="." unique_id=1274781947]
+
+[node name="layer 1" type="TextureRect" parent="Node" unique_id=2135463181]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -480.0
+offset_top = -258.0
+offset_right = 500.9248
+offset_bottom = -12.0
+mouse_filter = 2
+texture = ExtResource("5_12qgc")
+
+[node name="layer 2" type="TextureRect" parent="Node" unique_id=461890630]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -477.0
+offset_top = -206.0
+offset_right = 503.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("6_v16a6")
+
+[node name="layer 3" type="TextureRect" parent="Node" unique_id=1801224960]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -480.0
+offset_top = -31.0
+offset_right = 504.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("7_lcxfl")
+
+[node name="layer 4" type="TextureRect" parent="Node" unique_id=370328568]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -477.0
+offset_top = 68.0
+offset_right = 503.64526
+offset_bottom = 258.0
+mouse_filter = 2
+texture = ExtResource("8_jaw82")
+
+[node name="Label" type="Label" parent="." unique_id=1321557874]
+z_index = 1
+layout_mode = 0
+offset_left = -151.0
+offset_top = -304.0
+offset_right = 199.0
+offset_bottom = -210.0
+theme_override_fonts/font = ExtResource("3_8pq7m")
+theme_override_font_sizes/font_size = 100
+text = "The Prob"
+
+[node name="start" type="Button" parent="." unique_id=1665059019]
+z_index = 1
+layout_mode = 0
+offset_left = -113.0
+offset_top = -127.0
+offset_right = 157.0
+offset_bottom = -51.0
+theme = ExtResource("4_rs0be")
+theme_override_font_sizes/font_size = 46
+text = "Start"
+
+[node name="quit" type="Button" parent="." unique_id=115714755]
+z_index = 1
+layout_mode = 0
+offset_left = -112.0
+offset_top = -13.0
+offset_right = 158.0
+offset_bottom = 63.0
+theme = ExtResource("4_rs0be")
+theme_override_font_sizes/font_size = 46
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1789799443]
+position = Vector2(25, -112)
+zoom = Vector2(1.3, 1.3)
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

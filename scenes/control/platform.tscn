@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l0ceyqy0ohy7"]
+
+[ext_resource type="Texture2D" uid="uid://daexndunwyuaf" path="res://assets/Tileset/pixil-frame-0.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(34, 16)
+
+[node name="platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -6)
+texture = ExtResource("1_ba0x2")
+offset = Vector2(0, 7)
+region_enabled = true
+region_rect = Rect2(35, 32.7159, 35.3611, 21.7058)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_nlgqw")
