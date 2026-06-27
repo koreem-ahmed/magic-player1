@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/health_bars.tscn" id="8_smehm"]
 [ext_resource type="FontFile" uid="uid://dc4bx7gjbwxy0" path="res://assets/rainyhearts.ttf" id="8_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b0pblw4gd4m2r" path="res://assets/main char/Run.png" id="9_oprun"]
-[ext_resource type="Script" uid="uid://bmcsm80lgcko2" path="res://scripts/mana_bar.gd" id="9_ur7pv"]
+[ext_resource type="PackedScene" uid="uid://dqjlrnodwlhkl" path="res://scenes/control/mana-bar.tscn" id="11_je7p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("2_tuyoq")
@@ -522,69 +522,58 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(31, 16)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4r1p"]
-bg_color = Color(0.137255, 0.160784, 0.192157, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2wvv"]
-bg_color = Color(0.243137, 1, 0.843137, 1)
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=882840528]
 z_index = 1000
 collision_layer = 29
 script = ExtResource("1_g2els")
 
-[node name="player_animation" type="AnimatedSprite2D" parent="."]
+[node name="player_animation" type="AnimatedSprite2D" parent="." unique_id=1262284822]
 sprite_frames = SubResource("SpriteFrames_fulsm")
-animation = &"dash"
+animation = &"fall"
 autoplay = "default"
 
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2(0, -19)
-zoom = Vector2(4, 4)
+[node name="Camera" type="Camera2D" parent="." unique_id=934979602]
+position = Vector2(0, -33)
+zoom = Vector2(3.5, 3.5)
+limit_enabled = false
 
-[node name="collision" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1590362711]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_g2els")
 
-[node name="score" type="Label" parent="."]
-offset_left = 121.0
-offset_top = -97.0
-offset_right = 140.0
-offset_bottom = -74.0
+[node name="score" type="Label" parent="." unique_id=331186004]
+offset_left = 136.0
+offset_top = -137.0
+offset_right = 155.0
+offset_bottom = -114.0
 theme_override_fonts/font = ExtResource("8_y4r1p")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="attack_1_area" type="Area2D" parent="."]
+[node name="attack_1_area" type="Area2D" parent="." unique_id=857758264]
 position = Vector2(23, 1)
 collision_layer = 2
 collision_mask = 2
 
-[node name="attack_1_coll" type="CollisionShape2D" parent="attack_1_area"]
+[node name="attack_1_coll" type="CollisionShape2D" parent="attack_1_area" unique_id=1080648677]
 shape = SubResource("RectangleShape2D_fjrip")
 disabled = true
 
-[node name="attack_2_marker" type="Marker2D" parent="."]
+[node name="attack_2_marker" type="Marker2D" parent="." unique_id=2146671965]
 position = Vector2(19, -5)
 
-[node name="health-bars" parent="." instance=ExtResource("8_smehm")]
-offset_left = -141.0
-offset_top = -98.0
-offset_right = -68.0
-offset_bottom = -83.0
+[node name="health-bars" parent="." unique_id=726151709 instance=ExtResource("8_smehm")]
+offset_left = -159.0
+offset_top = -143.0
+offset_right = -86.0
+offset_bottom = -128.0
 
-[node name="mana-bar" type="ProgressBar" parent="."]
-offset_left = -141.0
-offset_top = -81.0
-offset_right = -69.0
-offset_bottom = -65.0
-theme_override_styles/background = SubResource("StyleBoxFlat_y4r1p")
-theme_override_styles/fill = SubResource("StyleBoxFlat_d2wvv")
-max_value = 180.0
-value = 20.0
-show_percentage = false
-script = ExtResource("9_ur7pv")
+[node name="mana_bar" parent="." unique_id=2104907546 instance=ExtResource("11_je7p5")]
+offset_left = -158.0
+offset_top = -125.0
+offset_right = -85.0
+offset_bottom = -110.0
 
 [connection signal="animation_finished" from="player_animation" to="." method="_on_player_animation_animation_finished"]
 [connection signal="body_entered" from="attack_1_area" to="." method="_on_attack_1_area_body_entered"]

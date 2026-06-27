@@ -95,3 +95,4 @@ func _on_detect_area_body_exited(body: Node2D) -> void:
 func _on_attacktimer_timeout() -> void:
 	if is_attacking:
 		animated.play("attack")
+#kjflksjkjj;lkjasdf;lkjasdf;lkjadfafdsajkl;[]]]q]q]]lkjjlk

@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://k5vjuoi07mpx"]
+
+[ext_resource type="Script" uid="uid://bp1qcak5vp157" path="res://scripts/levels_menu.gd" id="1_0v6ti"]
+[ext_resource type="Shader" uid="uid://dfo6hu5o8ekyj" path="res://bg-lay2.gdshader" id="1_e5ouw"]
+[ext_resource type="Texture2D" uid="uid://dvoo30h4frj7q" path="res://assets/Snow/snow-bg 1.png" id="2_26iel"]
+[ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/Snow/snow-bg 2.png" id="3_0v6ti"]
+[ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/Snow/snow-bg 3.png" id="4_rwf0f"]
+[ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/Snow/snow-bg 4.png" id="5_c5w54"]
+[ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="6_y7xam"]
+[ext_resource type="FontFile" uid="uid://dc4bx7gjbwxy0" path="res://assets/rainyhearts.ttf" id="8_rwf0f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pca5m"]
+shader = ExtResource("1_e5ouw")
+
+[node name="Control" type="Control" unique_id=655552222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0v6ti")
+
+[node name="Node" type="Node" parent="." unique_id=1655141700]
+
+[node name="layer 1" type="TextureRect" parent="Node" unique_id=1278439612]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pca5m")
+offset_left = -480.0
+offset_top = -258.0
+offset_right = 500.9248
+offset_bottom = -12.0
+mouse_filter = 2
+texture = ExtResource("2_26iel")
+
+[node name="layer 2" type="TextureRect" parent="Node" unique_id=1777809162]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pca5m")
+offset_left = -477.0
+offset_top = -206.0
+offset_right = 503.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("3_0v6ti")
+
+[node name="layer 3" type="TextureRect" parent="Node" unique_id=55957658]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pca5m")
+offset_left = -480.0
+offset_top = -31.0
+offset_right = 504.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("4_rwf0f")
+
+[node name="layer 4" type="TextureRect" parent="Node" unique_id=167665434]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pca5m")
+offset_left = -477.0
+offset_top = 68.0
+offset_right = 527.0
+offset_bottom = 283.0
+mouse_filter = 2
+texture = ExtResource("5_c5w54")
+
+[node name="Label" type="Label" parent="." unique_id=688278577]
+layout_mode = 0
+offset_left = -572.0
+offset_top = -125.0
+offset_right = 579.0
+offset_bottom = -50.0
+theme_override_fonts/font = ExtResource("8_rwf0f")
+theme_override_font_sizes/font_size = 80
+text = "Levels"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="level 1" type="Button" parent="." unique_id=594349456]
+layout_mode = 0
+offset_left = -309.0
+offset_top = 29.192326
+offset_right = -197.0
+offset_bottom = 124.19232
+theme = ExtResource("6_y7xam")
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="level 2" type="Button" parent="." unique_id=161988016]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 29.192326
+offset_right = 53.0
+offset_bottom = 124.19232
+theme = ExtResource("6_y7xam")
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="level 3" type="Button" parent="." unique_id=1242220262]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 19.192326
+offset_right = 277.0
+offset_bottom = 114.19232
+theme = ExtResource("6_y7xam")
+text = "3
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="level 2 bocker" type="ColorRect" parent="." unique_id=1114364450]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 33.192326
+offset_right = -41.0
+offset_bottom = 159.19232
+rotation = -0.7853982
+color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="level 2 bocker2" type="ColorRect" parent="." unique_id=1339116666]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 26.192326
+offset_right = 53.0
+offset_bottom = 152.19232
+rotation = 0.7853982
+color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="level 3 bocker" type="ColorRect" parent="." unique_id=1037350911]
+layout_mode = 0
+offset_left = 173.00006
+offset_top = 23.192387
+offset_right = 186.00006
+offset_bottom = 149.19238
+rotation = -0.7853982
+color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="level 3 bocker2" type="ColorRect" parent="." unique_id=829695052]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 15.192295
+offset_right = 276.0
+offset_bottom = 141.19229
+rotation = 0.7853982
+color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1159250718]
+z_index = 1
+position = Vector2(2, 13)
+zoom = Vector2(1.2, 1.2)
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level 2" to="." method="_on_level_2_pressed"]

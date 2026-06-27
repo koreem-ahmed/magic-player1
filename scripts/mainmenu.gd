@@ -4,7 +4,7 @@ extends Control
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/levels.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/levels_menu.tscn")
 
 
 func _on_quit_pressed() -> void:

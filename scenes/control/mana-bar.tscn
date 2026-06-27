@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqjlrnodwlhkl"]
+
+[ext_resource type="Script" uid="uid://bmcsm80lgcko2" path="res://scripts/mana_bar.gd" id="1_aq7vm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33hsn"]
+bg_color = Color(0.13725491, 0.16078432, 0.19215687, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4t5h"]
+bg_color = Color(0.24313726, 1, 0.84313726, 1)
+
+[node name="mana_bar" type="ProgressBar" unique_id=2104907546]
+offset_right = 64.0
+offset_bottom = 19.0
+theme_override_styles/background = SubResource("StyleBoxFlat_33hsn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k4t5h")
+max_value = 200.0
+value = 100.0
+show_percentage = false
+script = ExtResource("1_aq7vm")

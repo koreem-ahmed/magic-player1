@@ -1,5 +1,4 @@
-extends Node2D
-
+extends Control
 
 @onready var level_2_bocker: ColorRect = $"level 2 bocker"
 @onready var level_2_bocker_2: ColorRect = $"level 2 bocker2"

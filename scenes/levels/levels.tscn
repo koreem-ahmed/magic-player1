@@ -1,106 +1,142 @@
-[gd_scene format=3 uid="uid://bpwnt0mpt1yln"]
+[gd_scene format=3 uid="uid://v2b7s0afushw"]
 
-[ext_resource type="Script" uid="uid://dri03js85n05e" path="res://scripts/levels.gd" id="1_byla0"]
-[ext_resource type="Texture2D" uid="uid://ckp3pmiabb7io" path="res://assets/BG/purple_L1.png" id="2_r44b6"]
-[ext_resource type="Texture2D" uid="uid://dfeqb1mre25c" path="res://assets/BG/purple_L2.png" id="3_1jewu"]
-[ext_resource type="Texture2D" uid="uid://clmoob6gdf833" path="res://assets/BG/purple_L3.png" id="4_ibiju"]
-[ext_resource type="Texture2D" uid="uid://be56h208vscfn" path="res://assets/BG/purple_L4.png" id="5_00hpi"]
+[ext_resource type="Script" uid="uid://bp1qcak5vp157" path="res://scripts/levels_menu.gd" id="1_6p30w"]
+[ext_resource type="Shader" uid="uid://dfo6hu5o8ekyj" path="res://bg-lay2.gdshader" id="2_6p30w"]
+[ext_resource type="Texture2D" uid="uid://dvoo30h4frj7q" path="res://assets/Snow/snow-bg 1.png" id="3_xktef"]
+[ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/Snow/snow-bg 2.png" id="4_y6an2"]
+[ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/Snow/snow-bg 3.png" id="5_wcdgn"]
 [ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="6_6g56m"]
+[ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/Snow/snow-bg 4.png" id="6_hdn0s"]
 [ext_resource type="FontFile" uid="uid://dc4bx7gjbwxy0" path="res://assets/rainyhearts.ttf" id="6_r44b6"]
 
-[node name="Levels" type="Node2D" unique_id=877760638]
-script = ExtResource("1_byla0")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45xpy"]
+shader = ExtResource("2_6p30w")
 
-[node name="PurpleL1" type="Sprite2D" parent="." unique_id=1657509092]
-z_index = -5
-position = Vector2(599, 331)
-scale = Vector2(2.01875, 2.784)
-texture = ExtResource("2_r44b6")
+[node name="Node2D" type="Node2D" unique_id=1045156543]
+script = ExtResource("1_6p30w")
 
-[node name="PurpleL2" type="Sprite2D" parent="." unique_id=1668827910]
-z_index = -4
-position = Vector2(571, 330)
-scale = Vector2(2.792, 2.792)
-texture = ExtResource("3_1jewu")
+[node name="Node" type="Node" parent="." unique_id=1274781947]
 
-[node name="PurpleL3" type="Sprite2D" parent="." unique_id=162974574]
-z_index = -3
-position = Vector2(573, 336)
-scale = Vector2(2.708, 2.708)
-texture = ExtResource("4_ibiju")
+[node name="layer 1" type="TextureRect" parent="Node" unique_id=2135463181]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -480.0
+offset_top = -258.0
+offset_right = 500.9248
+offset_bottom = -12.0
+mouse_filter = 2
+texture = ExtResource("3_xktef")
 
-[node name="PurpleL4" type="Sprite2D" parent="." unique_id=396802695]
-z_index = -2
-position = Vector2(575, 328.5)
-scale = Vector2(2.80938, 2.732)
-texture = ExtResource("5_00hpi")
+[node name="layer 2" type="TextureRect" parent="Node" unique_id=461890630]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -477.0
+offset_top = -206.0
+offset_right = 503.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("4_y6an2")
 
-[node name="Label" type="Label" parent="." unique_id=875297240]
-offset_left = 1.0
-offset_top = 130.0
-offset_right = 1152.0
-offset_bottom = 205.0
+[node name="layer 3" type="TextureRect" parent="Node" unique_id=1801224960]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -480.0
+offset_top = -31.0
+offset_right = 504.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("5_wcdgn")
+
+[node name="layer 4" type="TextureRect" parent="Node" unique_id=370328568]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_45xpy")
+offset_left = -477.0
+offset_top = 68.0
+offset_right = 527.0
+offset_bottom = 283.0
+mouse_filter = 2
+texture = ExtResource("6_hdn0s")
+
+[node name="Label" type="Label" parent="." unique_id=1134042700]
+offset_left = -572.0
+offset_top = -125.0
+offset_right = 579.0
+offset_bottom = -50.0
 theme_override_fonts/font = ExtResource("6_r44b6")
 theme_override_font_sizes/font_size = 80
 text = "Levels"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="level 1" type="Button" parent="." unique_id=208216744]
-offset_left = 264.0
-offset_top = 273.0
-offset_right = 376.0
-offset_bottom = 368.0
+[node name="level 1" type="Button" parent="." unique_id=1424241364]
+offset_left = -309.0
+offset_top = 29.192326
+offset_right = -197.0
+offset_bottom = 124.19232
 theme = ExtResource("6_6g56m")
 text = "1"
+metadata/_edit_use_anchors_ = true
 
-[node name="level 2" type="Button" parent="." unique_id=49960221]
-offset_left = 514.0
-offset_top = 273.0
-offset_right = 626.0
-offset_bottom = 368.0
+[node name="level 2" type="Button" parent="." unique_id=1310704135]
+offset_left = -59.0
+offset_top = 29.192326
+offset_right = 53.0
+offset_bottom = 124.19232
 theme = ExtResource("6_6g56m")
 text = "2"
+metadata/_edit_use_anchors_ = true
 
-[node name="level 3" type="Button" parent="." unique_id=1067918733]
-offset_left = 738.0
-offset_top = 263.0
-offset_right = 850.0
-offset_bottom = 358.0
+[node name="level 3" type="Button" parent="." unique_id=1481831120]
+offset_left = 165.0
+offset_top = 19.192326
+offset_right = 277.0
+offset_bottom = 114.19232
 theme = ExtResource("6_6g56m")
 text = "3
 "
+metadata/_edit_use_anchors_ = true
 
-[node name="level 2 bocker" type="ColorRect" parent="." unique_id=2066443129]
-offset_left = 519.0
-offset_top = 277.0
-offset_right = 532.0
-offset_bottom = 403.0
+[node name="level 2 bocker" type="ColorRect" parent="." unique_id=1681223014]
+offset_left = -54.0
+offset_top = 33.192326
+offset_right = -41.0
+offset_bottom = 159.19232
 rotation = -0.7853982
 color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="level 2 bocker2" type="ColorRect" parent="." unique_id=1441052551]
-offset_left = 613.0
-offset_top = 270.0
-offset_right = 626.0
-offset_bottom = 396.0
+[node name="level 2 bocker2" type="ColorRect" parent="." unique_id=1278319263]
+offset_left = 40.0
+offset_top = 26.192326
+offset_right = 53.0
+offset_bottom = 152.19232
 rotation = 0.7853982
 color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="level 3 bocker" type="ColorRect" parent="." unique_id=94428459]
-offset_left = 746.00006
-offset_top = 267.00006
-offset_right = 759.00006
-offset_bottom = 393.00006
+[node name="level 3 bocker" type="ColorRect" parent="." unique_id=691265082]
+offset_left = 173.00006
+offset_top = 23.192387
+offset_right = 186.00006
+offset_bottom = 149.19238
 rotation = -0.7853982
 color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="level 3 bocker2" type="ColorRect" parent="." unique_id=1555221686]
-offset_left = 836.0
-offset_top = 258.99997
-offset_right = 849.0
-offset_bottom = 384.99997
+[node name="level 3 bocker2" type="ColorRect" parent="." unique_id=1919866763]
+offset_left = 263.0
+offset_top = 15.192295
+offset_right = 276.0
+offset_bottom = 141.19229
 rotation = 0.7853982
 color = Color(0.331181, 0.353291, 0.353292, 1)
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="level 2" to="." method="_on_level_2_pressed"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1789799443]
+z_index = 1
+position = Vector2(2, 13)
+zoom = Vector2(1.2, 1.2)
