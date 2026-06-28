@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dgsdemu8c7c6f" path="res://assets/Necromancer/Walk/spr_NecromancerWalk_strip10.png" id="2_a4ywr"]
 [ext_resource type="Texture2D" uid="uid://dygek7vto1df2" path="res://assets/Necromancer/Death/spr_NecromancerDeath_strip52.png" id="3_k4auq"]
 [ext_resource type="Texture2D" uid="uid://dg3ug5vmvg41o" path="res://assets/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png" id="4_fdqbe"]
-[ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/health_bars.tscn" id="6_fdqbe"]
+[ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/enmy_health.tscn" id="6_fdqbe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cue7"]
 atlas = ExtResource("4_fdqbe")
@@ -1096,13 +1096,13 @@ target_position = Vector2(-74, 0)
 [node name="d-right" type="RayCast2D" parent="." unique_id=1881867991]
 target_position = Vector2(74, 0)
 
-[node name="health-bar" parent="." unique_id=1630890965 instance=ExtResource("6_fdqbe")]
-offset_left = -19.0
-offset_top = -43.0
-offset_right = 16.0
-offset_bottom = -31.0
-
 [node name="attack-timer" type="Timer" parent="." unique_id=1142983786]
+
+[node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("6_fdqbe")]
+offset_left = -26.0
+offset_top = -46.0
+offset_right = 23.0
+offset_bottom = -32.0
 
 [connection signal="animation_finished" from="animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]

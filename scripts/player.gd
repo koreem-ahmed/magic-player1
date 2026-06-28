@@ -14,13 +14,9 @@ var Bullet = preload("res://scenes/player/player_bullet.tscn")
 
 var is_attacking = false
 var shoot_after_attack = false
-var death = false
+var death = Global.death
 
-var min_hel = 0
-var max_hel = 130
-var health = 130
 
-var max_mana = 180
 
 var is_dashing = false
 var dash_timer = 0.0
@@ -132,5 +128,3 @@ func shoot_bullet():
 
 func _on_attack_1_area_body_entered(body: Node2D) -> void:
 	body.health -= 20
-
-#f.dslkjfsdfsdfs

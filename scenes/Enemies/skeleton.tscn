@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmtj5e4ljrus6" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack2.png" id="3_5pgwy"]
 [ext_resource type="Texture2D" uid="uid://vmppmushuc6l" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="3_bnirc"]
 [ext_resource type="Texture2D" uid="uid://ewwgcoxnq11c" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Die.png" id="4_5pgwy"]
-[ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/health_bars.tscn" id="5_5pgwy"]
+[ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/enmy_health.tscn" id="5_5pgwy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnc0r"]
 atlas = ExtResource("3_5pgwy")
@@ -303,11 +303,11 @@ target_position = Vector2(-79, 0)
 [node name="d-right" type="RayCast2D" parent="." unique_id=489487942]
 target_position = Vector2(80, 0)
 
-[node name="health-bar" parent="." unique_id=1266045114 instance=ExtResource("5_5pgwy")]
-offset_left = -20.0
-offset_top = -27.0
-offset_right = 22.0
-offset_bottom = -19.0
+[node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("5_5pgwy")]
+offset_left = -26.0
+offset_top = -35.0
+offset_right = 26.0
+offset_bottom = -21.0
 
 [connection signal="animation_finished" from="Animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="attacking_area" to="." method="_on_attacking_area_body_entered"]

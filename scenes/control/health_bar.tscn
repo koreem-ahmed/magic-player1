@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://3h2bns0wll4w"]
+
+[ext_resource type="Texture2D" uid="uid://d0ejwwh3mipa6" path="res://assets/menu and bars/health outside.png" id="1_srckl"]
+[ext_resource type="Texture2D" uid="uid://d3vxnpqpy18lv" path="res://assets/menu and bars/health inside.png" id="2_1r8bn"]
+[ext_resource type="Script" uid="uid://dj8djo6og2mu0" path="res://scripts/player_health.gd" id="3_dxn08"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2qi6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5b4h"]
+bg_color = Color(0.10980392, 0.31764707, 0.2784314, 1)
+
+[node name="Player health" type="Control" unique_id=1905836242]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 90.0
+offset_bottom = 90.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=55995020]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+texture = ExtResource("1_srckl")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1316475326]
+clip_children = 1
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+texture = ExtResource("2_1r8bn")
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect/TextureRect" unique_id=358473851]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 45.0
+offset_right = 79.0
+offset_bottom = 54.0
+theme_override_styles/background = SubResource("StyleBoxFlat_h2qi6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h5b4h")
+max_value = 130.0
+value = 100.0
+show_percentage = false
+script = ExtResource("3_dxn08")
