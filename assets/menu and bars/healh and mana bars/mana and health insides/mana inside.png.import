@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs2hcc0atl44l"
-path="res://.godot/imported/mana outline.png-e005cb55756e46ec66db1b83a6a296f8.ctex"
+uid="uid://conm5xjh86o6q"
+path="res://.godot/imported/mana inside.png-75e6c44e55a9a35c8e6ced2c78790634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu and bars/mana outline.png"
-dest_files=["res://.godot/imported/mana outline.png-e005cb55756e46ec66db1b83a6a296f8.ctex"]
+source_file="res://assets/menu and bars/healh and mana bars/mana and health insides/mana inside.png"
+dest_files=["res://.godot/imported/mana inside.png-75e6c44e55a9a35c8e6ced2c78790634.ctex"]
 
 [params]
 

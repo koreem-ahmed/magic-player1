@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drunsre4xfwrd"
-path="res://.godot/imported/mana inside.png-1aeac2cfb748cca33fb2356e6bc9592f.ctex"
+uid="uid://dwvjrkwoscqn3"
+path="res://.godot/imported/health inside.png-ae7ffcf1edf58c6fd61d6a80507d11c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu and bars/mana inside.png"
-dest_files=["res://.godot/imported/mana inside.png-1aeac2cfb748cca33fb2356e6bc9592f.ctex"]
+source_file="res://assets/menu and bars/healh and mana bars/mana and health insides/health inside.png"
+dest_files=["res://.godot/imported/health inside.png-ae7ffcf1edf58c6fd61d6a80507d11c7.ctex"]
 
 [params]
 
