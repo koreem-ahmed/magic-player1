@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var score_label = $score
 
 const SPEED = 200
-const JUMP_FORCE = -300
+const JUMP_FORCE = -250
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var Bullet = preload("res://scenes/player/player_bullet.tscn")
@@ -24,7 +24,7 @@ const dash_speed = 600
 const dash_duration = 0.2
 
 var mana_regen_timer = 0.0
-const mana_regin_time = 2.5
+const mana_regin_time = 6
 const mana_amount = 20
 
 func _physics_process(delta):

@@ -1,46 +1,129 @@
 [gd_scene format=3 uid="uid://3h2bns0wll4w"]
 
-[ext_resource type="Texture2D" path="res://assets/menu and bars/health inside.png" id="2_1r8bn"]
+[ext_resource type="Texture2D" uid="uid://d2oyqmnrijcj2" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (1).png" id="1_dex01"]
+[ext_resource type="Texture2D" uid="uid://76j7k14qqrad" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (2).png" id="2_b7urv"]
 [ext_resource type="Script" uid="uid://dj8djo6og2mu0" path="res://scripts/player_health.gd" id="3_dxn08"]
+[ext_resource type="Texture2D" uid="uid://dbok4mkekkvts" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (3).png" id="3_gprkt"]
+[ext_resource type="Texture2D" uid="uid://coxoalnguoabc" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (4).png" id="4_pcsgf"]
+[ext_resource type="Texture2D" uid="uid://dhen07q30jkvc" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (5).png" id="5_ct6yh"]
+[ext_resource type="Texture2D" uid="uid://frts0lqg4002" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (6).png" id="6_lyu21"]
+[ext_resource type="Texture2D" uid="uid://bu0nvric4v6h3" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (7).png" id="7_e6ixr"]
+[ext_resource type="Texture2D" uid="uid://bmom24jvk6cb8" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (8).png" id="8_nsqyx"]
+[ext_resource type="Texture2D" uid="uid://wcj2shiwcr61" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (9).png" id="9_kyftn"]
+[ext_resource type="Texture2D" uid="uid://wagf7iroxlv1" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (10).png" id="10_nhpoj"]
+[ext_resource type="Texture2D" uid="uid://dkv6c8ho8c3dm" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (11).png" id="11_iw25i"]
+[ext_resource type="Texture2D" uid="uid://cn8nvtq5hop0w" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (12).png" id="12_qiv3w"]
+[ext_resource type="Texture2D" uid="uid://dwvjrkwoscqn3" path="res://assets/menu and bars/healh and mana bars/mana and health insides/health inside.png" id="13_pbv72"]
+[ext_resource type="Texture2D" uid="uid://conm5xjh86o6q" path="res://assets/menu and bars/healh and mana bars/mana and health insides/mana inside.png" id="15_ym3qv"]
+[ext_resource type="Script" uid="uid://bmcsm80lgcko2" path="res://scripts/mana_bar.gd" id="16_tytc1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2qi6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jwkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dex01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b7urv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gprkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pcsgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ct6yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyu21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e6ixr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nsqyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kyftn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nhpoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iw25i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qiv3w")
+}],
+"loop": true,
+"name": &"charging",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qku7n"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5b4h"]
-bg_color = Color(0.10980392, 0.31764707, 0.2784314, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5mit"]
+bg_color = Color(0, 0.70980394, 0.03529412, 1)
 
-[sub_resource type="Animation" id="Animation_230hp"]
-resource_name = "charging mana"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pedar"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rpjy"]
-_data = {
-&"charging mana": SubResource("Animation_230hp")
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrn7e"]
+bg_color = Color(0, 0.3764706, 0.78039217, 1)
 
-[node name="Player health & mana" type="Node2D" unique_id=1084189056]
+[node name="Player health & mana" type="Sprite2D" unique_id=847174752]
+scale = Vector2(1.7, 1.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=134290719]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095239019]
+sprite_frames = SubResource("SpriteFrames_1jwkv")
+animation = &"charging"
+autoplay = "charging"
+frame_progress = 0.9719819
 
-[node name="TextureRect" type="AnimatedSprite2D" parent="Sprite2D" unique_id=2144399341]
-
-[node name="TextureRect" type="TextureRect" parent="Sprite2D/TextureRect" unique_id=1316475326]
+[node name="health texture" type="TextureRect" parent="AnimatedSprite2D" unique_id=918337270]
 clip_children = 1
-offset_right = 90.0
-offset_bottom = 90.0
-texture = ExtResource("2_1r8bn")
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("13_pbv72")
+metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Sprite2D/TextureRect/TextureRect" unique_id=358473851]
+[node name="health bar" type="ProgressBar" parent="AnimatedSprite2D/health texture" unique_id=160693108]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 45.0
-offset_right = 79.0
-offset_bottom = 54.0
-theme_override_styles/background = SubResource("StyleBoxFlat_h2qi6")
-theme_override_styles/fill = SubResource("StyleBoxFlat_h5b4h")
+offset_left = 5.0
+offset_top = 33.0
+offset_right = 60.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qku7n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b5mit")
 max_value = 130.0
 value = 100.0
 show_percentage = false
 script = ExtResource("3_dxn08")
+metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=710253710]
-libraries/ = SubResource("AnimationLibrary_3rpjy")
+[node name="mana texture" type="TextureRect" parent="AnimatedSprite2D" unique_id=1008761553]
+clip_children = 1
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("15_ym3qv")
+metadata/_edit_use_anchors_ = true
+
+[node name="mana bar" type="ProgressBar" parent="AnimatedSprite2D/mana texture" unique_id=981328032]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 39.0
+offset_right = 57.0
+offset_bottom = 44.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pedar")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hrn7e")
+max_value = 180.0
+value = 20.0
+show_percentage = false
+script = ExtResource("16_tytc1")
+metadata/_edit_use_anchors_ = true
