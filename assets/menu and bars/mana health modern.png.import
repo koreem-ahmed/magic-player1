@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkv6c8ho8c3dm"
-path="res://.godot/imported/mana bar animation (11).png-5274084fe06ac9c5de19ed92eb8135a0.ctex"
+uid="uid://d2f4igejmsh7m"
+path="res://.godot/imported/mana health modern.png-684221bf7fc5bc2c08c1a2b7d008abd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (11).png"
-dest_files=["res://.godot/imported/mana bar animation (11).png-5274084fe06ac9c5de19ed92eb8135a0.ctex"]
+source_file="res://assets/menu and bars/mana health modern.png"
+dest_files=["res://.godot/imported/mana health modern.png-684221bf7fc5bc2c08c1a2b7d008abd7.ctex"]
 
 [params]
 

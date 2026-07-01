@@ -563,7 +563,7 @@ disabled = true
 position = Vector2(19, -5)
 
 [node name="Player health & mana" parent="." unique_id=1084189056 instance=ExtResource("10_h17s1")]
-position = Vector2(-105.99999, -97.999985)
+position = Vector2(-118, -88)
 
 [connection signal="animation_finished" from="player_animation" to="." method="_on_player_animation_animation_finished"]
 [connection signal="body_entered" from="attack_1_area" to="." method="_on_attack_1_area_body_entered"]

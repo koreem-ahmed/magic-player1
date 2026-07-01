@@ -1,18 +1,37 @@
 [gd_scene format=3 uid="uid://b88rp46tgymfs"]
 
 [ext_resource type="Script" uid="uid://bv3ds48dte200" path="res://scripts/enmy_health.gd" id="1_f1pjw"]
+[ext_resource type="Texture2D" uid="uid://crq08luj0y5bp" path="res://assets/menu and bars/enemies health bar/sprite_2.png" id="1_p5yxs"]
+[ext_resource type="Texture2D" uid="uid://bbi1s56y372cu" path="res://assets/menu and bars/enemies health bar/sprite_1.png" id="2_l8345"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaihb"]
-bg_color = Color(1, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl8ya"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42st7"]
-bg_color = Color(0, 1, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnqoi"]
+bg_color = Color(0, 1, 0.05882353, 1)
 
-[node name="health-bar" type="ProgressBar" unique_id=718774423]
-offset_right = 63.0
-offset_bottom = 27.0
-theme_override_styles/background = SubResource("StyleBoxFlat_kaihb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_42st7")
-value = 50.0
+[node name="health-bar" type="Sprite2D" unique_id=397970715]
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1663205182]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_p5yxs")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2" unique_id=663194181]
+clip_children = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_l8345")
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect2/TextureRect" unique_id=1602027595]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 62.0
+offset_bottom = 36.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rl8ya")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bnqoi")
+value = 100.0
 show_percentage = false
 script = ExtResource("1_f1pjw")

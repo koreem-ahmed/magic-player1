@@ -24,7 +24,7 @@ const dash_speed = 600
 const dash_duration = 0.2
 
 var mana_regen_timer = 0.0
-const mana_regin_time = 6
+const mana_regin_time = 5
 const mana_amount = 20
 
 func _physics_process(delta):

@@ -1,64 +1,234 @@
 [gd_scene format=3 uid="uid://3h2bns0wll4w"]
 
-[ext_resource type="Texture2D" uid="uid://d2oyqmnrijcj2" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (1).png" id="1_dex01"]
-[ext_resource type="Texture2D" uid="uid://76j7k14qqrad" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (2).png" id="2_b7urv"]
 [ext_resource type="Script" uid="uid://dj8djo6og2mu0" path="res://scripts/player_health.gd" id="3_dxn08"]
-[ext_resource type="Texture2D" uid="uid://dbok4mkekkvts" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (3).png" id="3_gprkt"]
-[ext_resource type="Texture2D" uid="uid://coxoalnguoabc" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (4).png" id="4_pcsgf"]
-[ext_resource type="Texture2D" uid="uid://dhen07q30jkvc" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (5).png" id="5_ct6yh"]
-[ext_resource type="Texture2D" uid="uid://frts0lqg4002" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (6).png" id="6_lyu21"]
-[ext_resource type="Texture2D" uid="uid://bu0nvric4v6h3" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (7).png" id="7_e6ixr"]
-[ext_resource type="Texture2D" uid="uid://bmom24jvk6cb8" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (8).png" id="8_nsqyx"]
-[ext_resource type="Texture2D" uid="uid://wcj2shiwcr61" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (9).png" id="9_kyftn"]
-[ext_resource type="Texture2D" uid="uid://wagf7iroxlv1" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (10).png" id="10_nhpoj"]
-[ext_resource type="Texture2D" uid="uid://dkv6c8ho8c3dm" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (11).png" id="11_iw25i"]
-[ext_resource type="Texture2D" uid="uid://cn8nvtq5hop0w" path="res://assets/menu and bars/healh and mana bars/Health & mana animation/mana bar animation (12).png" id="12_qiv3w"]
-[ext_resource type="Texture2D" uid="uid://dwvjrkwoscqn3" path="res://assets/menu and bars/healh and mana bars/mana and health insides/health inside.png" id="13_pbv72"]
-[ext_resource type="Texture2D" uid="uid://conm5xjh86o6q" path="res://assets/menu and bars/healh and mana bars/mana and health insides/mana inside.png" id="15_ym3qv"]
+[ext_resource type="Texture2D" uid="uid://d2f4igejmsh7m" path="res://assets/menu and bars/mana health modern.png" id="13_b7urv"]
+[ext_resource type="Texture2D" uid="uid://bwwi37obffxs1" path="res://assets/menu and bars/mana and health insides/sprite_33.png" id="14_gprkt"]
+[ext_resource type="Texture2D" uid="uid://b056mcrxxy0em" path="res://assets/menu and bars/mana and health insides/sprite_34.png" id="16_pcsgf"]
 [ext_resource type="Script" uid="uid://bmcsm80lgcko2" path="res://scripts/mana_bar.gd" id="16_tytc1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct6yh"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyu21"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ixr"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsqyx"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyftn"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhpoj"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw25i"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiv3w"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbv72"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym3qv"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tytc1"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jwkv"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qku7n"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5mit"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pedar"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrn7e"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mv6l"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2048, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mefnl"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2176, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11rnx"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2304, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y2c0"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2432, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpqhw"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2560, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgo7u"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2688, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y3iu"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2816, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yelh5"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(2944, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlovr"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3072, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qndhd"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3200, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47q7g"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3328, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rerhl"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3456, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uoox"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3584, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gca0w"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(3712, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3jie"]
+atlas = ExtResource("13_b7urv")
+region = Rect2(4096, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jwkv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dex01")
+"texture": SubResource("AtlasTexture_ct6yh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b7urv")
+"texture": SubResource("AtlasTexture_lyu21")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_gprkt")
+"texture": SubResource("AtlasTexture_e6ixr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_pcsgf")
+"texture": SubResource("AtlasTexture_nsqyx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ct6yh")
+"texture": SubResource("AtlasTexture_kyftn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_lyu21")
+"texture": SubResource("AtlasTexture_nhpoj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_e6ixr")
+"texture": SubResource("AtlasTexture_iw25i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_nsqyx")
+"texture": SubResource("AtlasTexture_qiv3w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_kyftn")
+"texture": SubResource("AtlasTexture_pbv72")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_nhpoj")
+"texture": SubResource("AtlasTexture_ym3qv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_iw25i")
+"texture": SubResource("AtlasTexture_tytc1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_qiv3w")
+"texture": SubResource("AtlasTexture_1jwkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qku7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5mit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pedar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrn7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mv6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mefnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11rnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y2c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpqhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgo7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y3iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yelh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlovr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47q7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rerhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uoox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gca0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3jie")
 }],
 "loop": true,
-"name": &"charging",
-"speed": 2.0
+"name": &"charging modern",
+"speed": 6.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qku7n"]
@@ -74,25 +244,31 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0, 0.3764706, 0.78039217, 1)
 
 [node name="Player health & mana" type="Sprite2D" unique_id=847174752]
-scale = Vector2(1.7, 1.7)
+z_index = 2
+scale = Vector2(0.8, 0.8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095239019]
 sprite_frames = SubResource("SpriteFrames_1jwkv")
-animation = &"charging"
-autoplay = "charging"
-frame_progress = 0.9719819
+animation = &"charging modern"
+autoplay = "charging modern"
+frame_progress = 0.34570488
 
 [node name="health texture" type="TextureRect" parent="AnimatedSprite2D" unique_id=918337270]
 clip_children = 1
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("13_pbv72")
+offset_left = -64.117645
+offset_top = -64.117645
+offset_right = 63.882355
+offset_bottom = 63.882355
+texture = ExtResource("14_gprkt")
 metadata/_edit_use_anchors_ = true
 
 [node name="health bar" type="ProgressBar" parent="AnimatedSprite2D/health texture" unique_id=160693108]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06204045
+anchor_top = 0.17417279
+anchor_right = 0.47794122
+anchor_bottom = 0.25137866
 offset_left = 5.0
 offset_top = 33.0
 offset_right = 60.0
@@ -100,22 +276,27 @@ offset_bottom = 39.0
 theme_override_styles/background = SubResource("StyleBoxFlat_qku7n")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b5mit")
 max_value = 130.0
-value = 100.0
+value = 124.0
 show_percentage = false
 script = ExtResource("3_dxn08")
 metadata/_edit_use_anchors_ = true
 
 [node name="mana texture" type="TextureRect" parent="AnimatedSprite2D" unique_id=1008761553]
 clip_children = 1
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("15_ym3qv")
+offset_left = -64.117645
+offset_top = -63.529408
+offset_right = 63.882355
+offset_bottom = 64.4706
+texture = ExtResource("16_pcsgf")
 metadata/_edit_use_anchors_ = true
 
 [node name="mana bar" type="ProgressBar" parent="AnimatedSprite2D/mana texture" unique_id=981328032]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054227956
+anchor_top = 0.24218744
+anchor_right = 0.40487134
+anchor_bottom = 0.3042279
 offset_left = 6.0
 offset_top = 39.0
 offset_right = 57.0
