@@ -11,10 +11,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0, 1, 0.05882353, 1)
 
 [node name="health-bar" type="Sprite2D" unique_id=397970715]
+scale = Vector2(0.7, 0.7)
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1663205182]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -31.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 32.0
 texture = ExtResource("1_p5yxs")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect2" unique_id=663194181]

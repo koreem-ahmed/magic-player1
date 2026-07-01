@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c27eilbxoilw" path="res://scenes/control/flame.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bctx41vuftnce" path="res://assets/cave BG/tileset.png" id="8_dnkej"]
 [ext_resource type="Texture2D" uid="uid://coin8u12n5wwm" path="res://assets/cave BG/vegetation.png" id="9_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://ds21n66t73hqt" path="res://scenes/Enemies/Necromancer.tscn" id="12_iav0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
@@ -237,5 +238,8 @@ offset_top = -43.0
 offset_right = 59.0
 offset_bottom = -20.0
 text = "Read the repo for instructions"
+
+[node name="enemy 2" parent="." unique_id=864292934 instance=ExtResource("12_iav0o")]
+position = Vector2(-47, 3)
 
 [connection signal="body_entered" from="winning" to="." method="_on_winning_body_entered"]

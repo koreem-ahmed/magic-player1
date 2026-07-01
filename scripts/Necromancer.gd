@@ -21,10 +21,11 @@ var min_hel = 0
 var is_attacking = false
 var can_attack = true
 
-var bullet = preload("res://scenes/Enemies/enemy_2_bullet.tscn")
+var player_pos
+
+var bullet = preload("res://scenes/Enemies/Necromancer_bullet.tscn")
 
 func  _physics_process(delta) -> void:
-	
 	if death:
 		death = true
 		is_attacking = false
@@ -32,16 +33,19 @@ func  _physics_process(delta) -> void:
 		animated.play("die")
 		return
 	
+	if Global.player:
+		player_pos = Global.player.global_position
+	
 	if not is_attacking:
 		position.x += Speed * direction * delta
+		attack_timer.stop()
 		
-		
-		if not left.is_colliding():
+		if not d_left.is_colliding():
 			direction = 1
 			animated.flip_h = false
 			shot_place.position.x = 22
 		
-		elif not right.is_colliding():
+		elif not d_right.is_colliding():
 			direction = -1
 			animated.flip_h = true
 			shot_place.position.x = -22
@@ -49,19 +53,20 @@ func  _physics_process(delta) -> void:
 		if animated.animation != "run":
 			animated.play("run")
 	
-	else: 
-		if d_left.is_colliding():
+	else: # if attacking
+		attack_timer.start()
+		if player_pos.x < global_position.x: # track the p layer position
 			direction = -1
 			animated.flip_h = true
 			shot_place.position.x = -22
 
-		elif d_right.is_colliding():
+		else:
 			direction = 1
 			animated.flip_h = false
 			shot_place.position.x = 22
 			
-		if animated.animation != "attack":
-			animated.play("attack")
+		
+		animated.play("attack")
 
 
 func _on_animated_animation_finished() -> void:
@@ -77,12 +82,7 @@ func attack() -> void:
 	var bullet_ins = bullet.instantiate()
 	get_tree().root.add_child(bullet_ins)
 	bullet_ins.global_position = shot_place.global_position
-
-	if animated.flip_h == true:
-		bullet_ins.dir = -1
-	else:
-		bullet_ins.dir = 1
-	attack_timer.start()
+	bullet_ins.dir = (player_pos - shot_place.global_position).normalized()
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
 	is_attacking = true

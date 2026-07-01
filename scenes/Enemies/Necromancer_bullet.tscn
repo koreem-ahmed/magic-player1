@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://wdvrcoscxx5a"]
+
+[ext_resource type="Script" uid="uid://dllqhodqdv2p" path="res://scripts/Necromancer_bullet.gd" id="1_s2djm"]
+[ext_resource type="Texture2D" uid="uid://dg3ug5vmvg41o" path="res://assets/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png" id="2_bbauf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_velj4"]
+size = Vector2(14, 7)
+
+[node name="enemy_2_bullet" type="Node2D" unique_id=195238775]
+script = ExtResource("1_s2djm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713059051]
+position = Vector2(0.25, 0)
+scale = Vector2(0.603448, 1)
+texture = ExtResource("2_bbauf")
+region_enabled = true
+region_rect = Rect2(4569.23, 42.4987, 29.5801, 22.2965)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1277296131]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=133851144]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355635114]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_velj4")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

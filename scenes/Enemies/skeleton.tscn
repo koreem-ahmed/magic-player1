@@ -304,10 +304,7 @@ target_position = Vector2(-79, 0)
 target_position = Vector2(80, 0)
 
 [node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("5_5pgwy")]
-offset_left = -26.0
-offset_top = -35.0
-offset_right = 26.0
-offset_bottom = -21.0
+position = Vector2(0, -23.999998)
 
 [connection signal="animation_finished" from="Animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="attacking_area" to="." method="_on_attacking_area_body_entered"]

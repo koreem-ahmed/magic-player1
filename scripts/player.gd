@@ -27,6 +27,10 @@ var mana_regen_timer = 0.0
 const mana_regin_time = 5
 const mana_amount = 20
 
+func _ready() -> void:
+	Global.player = self
+
+
 func _physics_process(delta):
 	
 	mana_regen_timer += delta
