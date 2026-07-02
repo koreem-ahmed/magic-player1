@@ -20,6 +20,7 @@ var min_hel = 0
 
 var is_attacking = false
 var can_attack = true
+var attacking_in_progress = false
 
 var player_pos
 
@@ -65,7 +66,7 @@ func  _physics_process(delta) -> void:
 			animated.flip_h = false
 			shot_place.position.x = 22
 			
-		
+		attacking_in_progress = true
 		animated.play("attack")
 
 
@@ -77,6 +78,10 @@ func _on_animated_animation_finished() -> void:
 	
 	if animated.animation == "attack":
 		attack()
+		attacking_in_progress = false
+		
+		if not detect_area.has_overlapping_bodies():
+			is_attacking = false
 
 func attack() -> void:
 	var bullet_ins = bullet.instantiate()
@@ -89,9 +94,11 @@ func _on_detect_area_body_entered(body: Node2D) -> void:
 
 
 func _on_detect_area_body_exited(body: Node2D) -> void:
-	is_attacking = false
+	if not attacking_in_progress:
+		is_attacking = false
 
 
 func _on_attacktimer_timeout() -> void:
 	if is_attacking:
+		attacking_in_progress = true
 		animated.play("attack")

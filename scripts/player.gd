@@ -14,9 +14,7 @@ var Bullet = preload("res://scenes/player/player_bullet.tscn")
 
 var is_attacking = false
 var shoot_after_attack = false
-var death = Global.death
-
-
+var death = false
 
 var is_dashing = false
 var dash_timer = 0.0
@@ -29,9 +27,16 @@ const mana_amount = 20
 
 func _ready() -> void:
 	Global.player = self
+	Global.health = 130
 
 
 func _physics_process(delta):
+	if Global.health <= Global.min_hel:
+		death = true
+	
+	if death:
+		anim.play("die")
+		return
 	
 	mana_regen_timer += delta
 	if mana_regen_timer >= mana_regin_time:
@@ -42,10 +47,6 @@ func _physics_process(delta):
 	
 	if Global.mana > 180:
 		Global.mana = 180
-	
-	if death:
-		anim.play("die")
-		return
 
 	if not is_on_floor():
 		velocity.y += gravity * delta

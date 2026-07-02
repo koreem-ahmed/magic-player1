@@ -9,6 +9,7 @@ extends Node2D
 @onready var detection_area: Area2D = $detection_area
 @onready var attack_col: CollisionShape2D = $attacking_area/attack_col
 @onready var detection_col: CollisionShape2D = $detection_area/detection_col
+@onready var attack_timer: Timer = $"attack-timer"
 
 var direction = 1
 const Speed = 60
@@ -28,34 +29,36 @@ func _physics_process(delta):
 		animated.play("die")
 		return
 	
-	if not left.is_colliding():
-		direction = -1
-		animated.flip_h = true
-		attacking_area.position.x = -22
-
-	elif not right.is_colliding():
-		direction = 1
-		animated.flip_h = false
-		attacking_area.position.x = 22
-	
 	if is_attacking:
 		
-		if d_left.is_colliding():
+		if left.is_colliding():
 			direction = -1
 			animated.flip_h = true
 			attacking_area.position.x = -22
 
-		elif d_right.is_colliding():
+		elif right.is_colliding():
 			direction = 1
 			animated.flip_h = false
 			attacking_area.position.x = 22
 			
+		
 		animated.play("attack")
 		attack_col.disabled = false
 		return
 	
 	
 	else:
+		
+		if not d_left.is_colliding():
+			direction = -1
+			animated.flip_h = true
+			attacking_area.position.x = -22
+
+		elif not d_right.is_colliding():
+			direction = 1
+			animated.flip_h = false
+			attacking_area.position.x = 22
+	
 		if animated.animation != "run":
 			animated.play("run")
 			position.x += Speed * direction * delta
@@ -68,11 +71,14 @@ func _on_animated_animation_finished() -> void:
 		print("died")
 		Global.score += 1
 		queue_free()
+		
+	if animated.animation == "attack":
+		attack_col.disabled = true
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	is_attacking = true
-
+	
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	is_attacking = false
@@ -83,6 +89,9 @@ func _on_attacking_area_body_entered(body: Node2D) -> void:
 		can_attack = false
 		Global.health -= 30
 	
-		await get_tree().create_timer(1).timeout
+		attack_timer.start()
 		
-		can_attack = true
+	
+
+func _on_attacktimer_timeout() -> void:
+	can_attack = true

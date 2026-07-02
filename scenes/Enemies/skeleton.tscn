@@ -270,11 +270,11 @@ sprite_frames = SubResource("SpriteFrames_7e1v2")
 animation = &"attack"
 autoplay = "run"
 
-[node name="left" type="RayCast2D" parent="." unique_id=123444709]
+[node name="d-left" type="RayCast2D" parent="." unique_id=123444709]
 position = Vector2(12, 5)
 target_position = Vector2(0, 37)
 
-[node name="right" type="RayCast2D" parent="." unique_id=2092964543]
+[node name="d-right" type="RayCast2D" parent="." unique_id=2092964543]
 position = Vector2(-12, 5)
 target_position = Vector2(0, 37)
 
@@ -297,16 +297,19 @@ collision_mask = 4
 [node name="detection_col" type="CollisionShape2D" parent="detection_area" unique_id=1553475551]
 shape = SubResource("CircleShape2D_5pgwy")
 
-[node name="d-left" type="RayCast2D" parent="." unique_id=2001515990]
+[node name="left" type="RayCast2D" parent="." unique_id=2001515990]
 target_position = Vector2(-79, 0)
 
-[node name="d-right" type="RayCast2D" parent="." unique_id=489487942]
+[node name="right" type="RayCast2D" parent="." unique_id=489487942]
 target_position = Vector2(80, 0)
 
 [node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("5_5pgwy")]
 position = Vector2(0, -23.999998)
 
+[node name="attack-timer" type="Timer" parent="." unique_id=652878453]
+
 [connection signal="animation_finished" from="Animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="attacking_area" to="." method="_on_attacking_area_body_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="attack-timer" to="." method="_on_attacktimer_timeout"]

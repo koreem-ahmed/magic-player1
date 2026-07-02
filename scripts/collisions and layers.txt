@@ -1,0 +1,21 @@
+layer 1 = world & player & killzone & necromancer & skeleton
+
+layer 2 = necromancer & skeleton & player bullet
+
+layer 3 = player
+
+layer 4 = player & flame
+
+layer 5 = player
+
+layer 6 =
+
+layer 7 = 
+
+layer 8 =
+
+---------------------
+
+mask 1 = player & necromancer & skeleton
+
+mask 2 = 
