@@ -9,10 +9,10 @@ extends Node2D
 @onready var detection_area: Area2D = $detection_area
 @onready var attack_col: CollisionShape2D = $attacking_area/attack_col
 @onready var detection_col: CollisionShape2D = $detection_area/detection_col
-@onready var attack_timer: Timer = $"attack-timer"
+@onready var attack_timer: Timer = $attack_timer
 
-var direction = 1
 const Speed = 60
+var direction = 1
 
 var death = false
 var health = 150
@@ -22,49 +22,61 @@ var min_hel = 0
 var is_attacking = false
 var can_attack = true
 
+var player_pos: Vector2
+
+
 func _physics_process(delta):
-	position.x += direction * Speed * delta
-	
 	if death:
 		animated.play("die")
 		return
 	
-	if is_attacking:
+	if Global.player:
+		player_pos = Global.player.global_position
+	else:
+		is_attacking = false
+	
+	if not is_attacking:
+		if not d_left.is_colliding():
+			face_to(-1)
+		elif not d_right.is_colliding():
+			face_to(1)
 		
 		if left.is_colliding():
-			direction = -1
-			animated.flip_h = true
-			attacking_area.position.x = -22
-
+			face_to(1)
 		elif right.is_colliding():
-			direction = 1
-			animated.flip_h = false
-			attacking_area.position.x = 22
-			
+			face_to(-1)
 		
-		animated.play("attack")
-		attack_col.disabled = false
-		return
-	
-	
-	else:
-		
-		if not d_left.is_colliding():
-			direction = -1
-			animated.flip_h = true
-			attacking_area.position.x = -22
-
-		elif not d_right.is_colliding():
-			direction = 1
-			animated.flip_h = false
-			attacking_area.position.x = 22
-	
 		if animated.animation != "run":
 			animated.play("run")
-			position.x += Speed * direction * delta
 		
+		position.x += Speed * direction * delta
+	
+	else:
+		if not d_left.is_colliding():
+			face_to(-1)
+		
+		elif not d_right.is_colliding():
+			face_to(1)
+		
+		attack_func()
+		
+		position.x += direction * Speed * delta
 
-
+func attack_func ():
+	if not can_attack:
+		return
+	
+	if player_pos.x < global_position.x: # track the player position
+		face_to(-1)
+	
+	else:
+		face_to(1)
+	
+	if animated.animation != "attack":
+		animated.play("attack")
+	
+	attack_col.disabled = false
+	return
 
 func _on_animated_animation_finished() -> void:
 	if animated.animation == "die":
@@ -74,24 +86,23 @@ func _on_animated_animation_finished() -> void:
 		
 	if animated.animation == "attack":
 		attack_col.disabled = true
+		can_attack = false
+		attack_timer.start()
 
-
-func _on_detection_area_body_entered(body: Node2D) -> void:
+func _on_detection_area_body_entered(body: Node2D) -> void: # begin attacking
 	is_attacking = true
 	
-
-func _on_detection_area_body_exited(body: Node2D) -> void:
+func _on_detection_area_body_exited(body: Node2D) -> void: #stop attacking
 	is_attacking = false
 
+func _on_attacking_area_body_entered(body: Node2D) -> void: #damage
+	Global.health -= 30
 
-func _on_attacking_area_body_entered(body: Node2D) -> void:
-	if can_attack:
-		can_attack = false
-		Global.health -= 30
-	
-		attack_timer.start()
-		
-	
+func face_to(dir: int): # directions function
+	direction = dir
+	animated.flip_h = dir < 0
+	attacking_area.position.x = 22 * dir
 
-func _on_attacktimer_timeout() -> void:
+
+func _on_attack_timer_timeout() -> void:
 	can_attack = true

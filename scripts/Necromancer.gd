@@ -22,7 +22,7 @@ var is_attacking = false
 var can_attack = true
 var attacking_in_progress = false
 
-var player_pos
+var player_pos: Vector2
 
 var bullet = preload("res://scenes/Enemies/Necromancer_bullet.tscn")
 
@@ -51,6 +51,17 @@ func  _physics_process(delta) -> void:
 			animated.flip_h = true
 			shot_place.position.x = -22
 		
+		if right.is_colliding():
+			direction = -1
+			animated.flip_h = true
+			shot_place.position.x = -22
+		
+		if left.is_colliding():
+			direction = 1
+			animated.flip_h = false
+			shot_place.position.x = 22
+			
+			
 		if animated.animation != "run":
 			animated.play("run")
 	

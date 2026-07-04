@@ -206,9 +206,6 @@ position = Vector2(1984, -43)
 
 [node name="enemies" type="Node" parent="." unique_id=280791255]
 
-[node name="skeleton" parent="enemies" unique_id=1638076512 instance=ExtResource("13_dnkej")]
-position = Vector2(-177, 2)
-
 [node name="winning" type="Area2D" parent="." unique_id=316200566]
 position = Vector2(3345, -163)
 
@@ -241,5 +238,8 @@ offset_top = -43.0
 offset_right = 59.0
 offset_bottom = -20.0
 text = "Read the repo for instructions"
+
+[node name="skeleton" parent="." unique_id=1638076512 instance=ExtResource("13_dnkej")]
+position = Vector2(-178, 2)
 
 [connection signal="body_entered" from="winning" to="." method="_on_winning_body_entered"]

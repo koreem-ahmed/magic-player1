@@ -260,7 +260,6 @@ radius = 80.0062
 
 [node name="skeleton" type="CharacterBody2D" unique_id=1638076512]
 collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_ivqcw")
 
 [node name="Animated" type="AnimatedSprite2D" parent="." unique_id=1219735311]
@@ -298,18 +297,20 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_5pgwy")
 
 [node name="left" type="RayCast2D" parent="." unique_id=2001515990]
-target_position = Vector2(-79, 0)
+target_position = Vector2(-17, 1)
 
 [node name="right" type="RayCast2D" parent="." unique_id=489487942]
-target_position = Vector2(80, 0)
+target_position = Vector2(17, 0)
 
 [node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("5_5pgwy")]
 position = Vector2(0, -23.999998)
 
-[node name="attack-timer" type="Timer" parent="." unique_id=652878453]
+[node name="attack_timer" type="Timer" parent="." unique_id=652878453]
+wait_time = 0.5
 
 [connection signal="animation_finished" from="Animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="attacking_area" to="." method="_on_attacking_area_body_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="timeout" from="attack-timer" to="." method="_on_attacktimer_timeout"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attacktimer_timeout"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
