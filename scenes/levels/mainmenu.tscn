@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://c88g7fv1t2w1u"]
 
 [ext_resource type="Script" uid="uid://c1n5s35bbi1j7" path="res://scripts/mainmenu.gd" id="1_8pq7m"]
-[ext_resource type="FontFile" uid="uid://dc4bx7gjbwxy0" path="res://assets/rainyhearts.ttf" id="3_8pq7m"]
 [ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="4_rs0be"]
 [ext_resource type="Shader" uid="uid://dfo6hu5o8ekyj" path="res://bg-lay2.gdshader" id="4_ybr10"]
-[ext_resource type="Texture2D" uid="uid://dvoo30h4frj7q" path="res://assets/Snow/snow-bg 1.png" id="5_12qgc"]
-[ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/Snow/snow-bg 2.png" id="6_v16a6"]
-[ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/Snow/snow-bg 3.png" id="7_lcxfl"]
-[ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/Snow/snow-bg 4.png" id="8_jaw82"]
+[ext_resource type="Texture2D" uid="uid://dvoo30h4frj7q" path="res://assets/snow BG/snow-bg 1.png" id="5_12qgc"]
+[ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/snow BG/snow-bg 2.png" id="6_v16a6"]
+[ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/snow BG/snow-bg 3.png" id="7_lcxfl"]
+[ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/snow BG/snow-bg 4.png" id="8_jaw82"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45xpy"]
 shader = ExtResource("4_ybr10")
@@ -66,13 +65,13 @@ texture = ExtResource("8_jaw82")
 [node name="Label" type="Label" parent="." unique_id=1321557874]
 z_index = 1
 layout_mode = 0
-offset_left = -170.0
-offset_top = -292.0
-offset_right = 225.0
-offset_bottom = -198.0
-theme_override_fonts/font = ExtResource("3_8pq7m")
-theme_override_font_sizes/font_size = 100
-text = "The forgo"
+offset_left = -167.0
+offset_top = -281.0
+offset_right = 217.0
+offset_bottom = -177.0
+theme_override_colors/font_color = Color(0.99294776, 0.9919036, 0.9999998, 1)
+theme_override_font_sizes/font_size = 72
+text = "The prop"
 
 [node name="start" type="Button" parent="." unique_id=1665059019]
 z_index = 1

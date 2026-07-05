@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bctx41vuftnce" path="res://assets/cave BG/tileset.png" id="8_dnkej"]
 [ext_resource type="Texture2D" uid="uid://coin8u12n5wwm" path="res://assets/cave BG/vegetation.png" id="9_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://criet037u86e7" path="res://scenes/Enemies/skeleton.tscn" id="13_dnkej"]
+[ext_resource type="PackedScene" uid="uid://ds21n66t73hqt" path="res://scenes/Enemies/Necromancer.tscn" id="13_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://duxlbh2bpsnil" path="res://scenes/control/game_over.tscn" id="14_mm8aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
@@ -180,66 +182,43 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="flame" parent="flames" unique_id=1261651516 instance=ExtResource("7_u5sy4")]
 position = Vector2(125, -2)
 
-[node name="flame2" parent="flames" unique_id=875500396 instance=ExtResource("7_u5sy4")]
-visible = false
-position = Vector2(602, -105)
-
-[node name="flame3" parent="flames" unique_id=1698038266 instance=ExtResource("7_u5sy4")]
-visible = false
-position = Vector2(776, 53)
-
 [node name="flame4" parent="flames" unique_id=2075119442 instance=ExtResource("7_u5sy4")]
-visible = false
-position = Vector2(1001, 59)
+position = Vector2(1134, 37)
 
 [node name="flame5" parent="flames" unique_id=1087256492 instance=ExtResource("7_u5sy4")]
-visible = false
 position = Vector2(1355, -30)
 
 [node name="flame6" parent="flames" unique_id=640275323 instance=ExtResource("7_u5sy4")]
-visible = false
-position = Vector2(1626, -11)
+position = Vector2(1709, 48)
 
 [node name="flame7" parent="flames" unique_id=1745837169 instance=ExtResource("7_u5sy4")]
-visible = false
-position = Vector2(1984, -43)
+position = Vector2(2327, -14)
 
 [node name="enemies" type="Node" parent="." unique_id=280791255]
+
+[node name="Necromancer" parent="enemies" unique_id=864292934 instance=ExtResource("13_mm8aj")]
+position = Vector2(578, 3)
+
+[node name="Necromancer2" parent="enemies" unique_id=1320122549 instance=ExtResource("13_mm8aj")]
+position = Vector2(1475, 51)
+
+[node name="skeleton2" parent="enemies" unique_id=1506374126 instance=ExtResource("13_dnkej")]
+position = Vector2(962, 66)
+
+[node name="Necromancer3" parent="enemies" unique_id=102301625 instance=ExtResource("13_mm8aj")]
+position = Vector2(2908, 2)
+
+[node name="Necromancer4" parent="enemies" unique_id=1157709765 instance=ExtResource("13_mm8aj")]
+position = Vector2(3027, 2)
 
 [node name="winning" type="Area2D" parent="." unique_id=316200566]
 position = Vector2(3345, -163)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winning" unique_id=727103487]
-position = Vector2(2, -2)
+position = Vector2(-6, 109)
 shape = SubResource("RectangleShape2D_trtic")
 
-[node name="Label" type="Label" parent="." unique_id=1853889262]
+[node name="Game over" parent="." unique_id=1317518215 instance=ExtResource("14_mm8aj")]
 visible = false
-offset_left = 3030.0
-offset_top = -65.0
-offset_right = 3089.0
-offset_bottom = -16.0
-text = "jump ->
-"
-
-[node name="win" type="Label" parent="." unique_id=1660443208]
-visible = false
-offset_left = 2749.0
-offset_top = -66.0
-offset_right = 3008.0
-offset_bottom = -43.0
-text = "You must have score more than 3"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="." unique_id=547799179]
-visible = false
-offset_left = -132.0
-offset_top = -43.0
-offset_right = 59.0
-offset_bottom = -20.0
-text = "Read the repo for instructions"
-
-[node name="skeleton" parent="." unique_id=1638076512 instance=ExtResource("13_dnkej")]
-position = Vector2(-178, 2)
 
 [connection signal="body_entered" from="winning" to="." method="_on_winning_body_entered"]

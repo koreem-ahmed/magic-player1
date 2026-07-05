@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmtj5e4ljrus6" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack2.png" id="3_5pgwy"]
 [ext_resource type="Texture2D" uid="uid://vmppmushuc6l" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="3_bnirc"]
 [ext_resource type="Texture2D" uid="uid://ewwgcoxnq11c" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Die.png" id="4_5pgwy"]
+[ext_resource type="Texture2D" uid="uid://bbuuq3tvy4o2" path="res://assets/skeleton/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack1.png" id="4_uhbkm"]
 [ext_resource type="PackedScene" uid="uid://b88rp46tgymfs" path="res://scenes/control/enmy_health.tscn" id="5_5pgwy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnc0r"]
@@ -93,6 +94,46 @@ region = Rect2(1056, 0, 96, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpc7s"]
 atlas = ExtResource("4_5pgwy")
 region = Rect2(1152, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nopfk"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuri1"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww5mx"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaqeq"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24a26"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvhnk"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju7lb"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfba7"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl8sr"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rfb"]
+atlas = ExtResource("4_uhbkm")
+region = Rect2(864, 0, 96, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbvs3"]
 atlas = ExtResource("3_bnirc")
@@ -214,6 +255,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_nopfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuri1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww5mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaqeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24a26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvhnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju7lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfba7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl8sr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rfb")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pbvs3")
 }, {
 "duration": 1.0,
@@ -253,7 +329,7 @@ radius = 11.3636
 height = 68.1819
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnirc"]
-size = Vector2(20, 6)
+size = Vector2(20, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pgwy"]
 radius = 80.0062
@@ -268,6 +344,8 @@ scale = Vector2(0.641875, 0.641875)
 sprite_frames = SubResource("SpriteFrames_7e1v2")
 animation = &"attack"
 autoplay = "run"
+frame = 8
+frame_progress = 1.0
 
 [node name="d-left" type="RayCast2D" parent="." unique_id=123444709]
 position = Vector2(12, 5)
@@ -286,6 +364,7 @@ shape = SubResource("CapsuleShape2D_w1nps")
 position = Vector2(22, -5)
 
 [node name="attack_col" type="CollisionShape2D" parent="attacking_area" unique_id=5938564]
+position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_bnirc")
 disabled = true
 
@@ -305,12 +384,7 @@ target_position = Vector2(17, 0)
 [node name="health-bar" parent="." unique_id=718774423 instance=ExtResource("5_5pgwy")]
 position = Vector2(0, -23.999998)
 
-[node name="attack_timer" type="Timer" parent="." unique_id=652878453]
-wait_time = 0.5
-
 [connection signal="animation_finished" from="Animated" to="." method="_on_animated_animation_finished"]
 [connection signal="body_entered" from="attacking_area" to="." method="_on_attacking_area_body_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="timeout" from="attack_timer" to="." method="_on_attacktimer_timeout"]
-[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

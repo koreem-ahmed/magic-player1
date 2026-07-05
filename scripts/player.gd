@@ -31,80 +31,83 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	if Global.health <= Global.min_hel:
-		death = true
+	
+	death = Global.death
 	
 	if death:
-		anim.play("die")
-		return
+		if anim.animation != "die":
+			Engine.time_scale = 0.5
+			anim.play("die")
 	
-	mana_regen_timer += delta
-	if mana_regen_timer >= mana_regin_time:
-		Global.mana += mana_amount
-		mana_regen_timer = 0.0
-	
-	score_label.text = str(Global.score)
-	
-	if Global.mana > 180:
-		Global.mana = 180
-
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_FORCE
-	
-	if Input.is_action_just_pressed("attack") and not is_attacking and Global.mana >= 20:
-		Global.mana -= 20
-		is_attacking = true
-		atk1_coll.disabled = false
-		anim.play("attack1")
-		return
-
-	if Input.is_action_just_pressed("attack 2") and not is_attacking and Global.mana >= 40:
-		Global.mana -= 40
-		is_attacking = true
-		shoot_after_attack = true
-		shoot_bullet()
-		anim.play("attack2")
-		return
-
-	var dir = Input.get_axis("move_left", "move_right")
-	
-	
-	if Input.is_action_just_pressed("dash") and not is_dashing and not is_attacking and Global.mana >= 30:
-		is_dashing = true
-		dash_timer = dash_duration
-		anim.play("dash")
-		Global.mana -= 30
-	
-	if is_dashing:
-		dash_timer -= delta
-		if dash_timer <= 0:
-			is_dashing = false
-		
-		if dir != 0:
-			velocity.x = dir * dash_speed
-		else:
-			var facing_dir = -1 if anim.flip_h else 1
-			velocity.x = facing_dir * dash_speed
 	else:
-		velocity.x = dir * SPEED
-
-	if dir < 0:
-		anim.flip_h = true
-		atk1_area.position.x = -23
-	elif dir > 0:
-		anim.flip_h = false
-		atk1_area.position.x = 23
+		mana_regen_timer += delta
+			
+		if mana_regen_timer >= mana_regin_time:
+			Global.mana += mana_amount
+			mana_regen_timer = 0.0
+		
+		score_label.text = str(Global.score)
+		
+		if Global.mana > 180:
+			Global.mana = 180
 	
-	if not is_attacking and not is_dashing:
-		if dir != 0:
-			anim.play("run")
+		if not is_on_floor():
+			velocity.y += gravity * delta
+	
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_FORCE
+		
+		if Input.is_action_just_pressed("attack") and not is_attacking and Global.mana >= 20:
+			Global.mana -= 20
+			is_attacking = true
+			atk1_coll.disabled = false
+			anim.play("attack1")
+			return
+	
+		if Input.is_action_just_pressed("attack 2") and not is_attacking and Global.mana >= 40:
+			Global.mana -= 40
+			is_attacking = true
+			shoot_after_attack = true
+			shoot_bullet()
+			anim.play("attack2")
+			return
+	
+		var dir = Input.get_axis("move_left", "move_right")
+		
+		
+		if Input.is_action_just_pressed("dash") and not is_dashing and not is_attacking and Global.mana >= 30:
+			is_dashing = true
+			dash_timer = dash_duration
+			anim.play("dash")
+			Global.mana -= 30
+		
+		if is_dashing:
+			dash_timer -= delta
+			if dash_timer <= 0:
+				is_dashing = false
+			
+			if dir != 0:
+				velocity.x = dir * dash_speed
+			else:
+				var facing_dir = -1 if anim.flip_h else 1
+				velocity.x = facing_dir * dash_speed
 		else:
-			anim.play("default")
-
-	move_and_slide()
+			velocity.x = dir * SPEED
+	
+		if dir < 0:
+			anim.flip_h = true
+			atk1_area.position.x = -23
+		elif dir > 0:
+			anim.flip_h = false
+			atk1_area.position.x = 23
+		
+		if not is_attacking and not is_dashing:
+			if dir != 0:
+				anim.play("run")
+			else:
+				anim.play("default")
+	
+		move_and_slide()
 
 func _on_player_animation_animation_finished():
 	if anim.animation == "attack1":
@@ -118,7 +121,7 @@ func _on_player_animation_animation_finished():
 	elif anim.animation == "die":
 		Global.score = 0
 		Global.mana = 180
-		get_tree().call_deferred("reload_current_scene")
+		get_node("../Game over").game_over()
 
 func shoot_bullet():
 	await get_tree().create_timer(0.2).timeout

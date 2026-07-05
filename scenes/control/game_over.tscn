@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://duxlbh2bpsnil"]
+
+[ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="1_6e148"]
+[ext_resource type="Script" uid="uid://vj4likqdkswr" path="res://scripts/game_over.gd" id="1_cpvhv"]
+
+[node name="Game over" type="CanvasLayer" unique_id=1317518215]
+process_mode = 3
+script = ExtResource("1_cpvhv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1654039704]
+offset_left = -112.0
+offset_top = -112.0
+offset_right = 1377.0
+offset_bottom = 763.0
+color = Color(0.011764706, 0.011764706, 0.011764706, 0.6784314)
+
+[node name="Retry" type="Button" parent="." unique_id=104779381]
+offset_left = 456.0
+offset_top = 303.0
+offset_right = 655.0
+offset_bottom = 396.0
+theme = ExtResource("1_6e148")
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="Quit" type="Button" parent="." unique_id=1571113564]
+offset_left = 454.0
+offset_top = 447.0
+offset_right = 652.0
+offset_bottom = 532.0
+theme = ExtResource("1_6e148")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Game over text" type="Label" parent="." unique_id=884903498]
+offset_left = -5.0
+offset_top = 118.0
+offset_right = 1157.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
