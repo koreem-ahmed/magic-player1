@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://0a3yhono3okd"]
+
+[ext_resource type="Texture2D" uid="uid://bx1j8ud7mxqqt" path="res://assets/snow BG/SnowTilemap .png" id="1_b2ra2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2f30"]
+size = Vector2(48, 16)
+
+[sub_resource type="Animation" id="Animation_vrjec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6t423"]
+resource_name = "moving"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(285, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlpxp"]
+_data = {
+&"RESET": SubResource("Animation_vrjec"),
+&"moving": SubResource("Animation_6t423")
+}
+
+[node name="snow platform" type="Node2D" unique_id=1642099803]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1337991788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=533048742]
+shape = SubResource("RectangleShape2D_k2f30")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1726803680]
+texture = ExtResource("1_b2ra2")
+region_enabled = true
+region_rect = Rect2(0.12256241, 48.009987, 47.914394, 15.845642)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=629050777]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_jlpxp")
+autoplay = &"moving"

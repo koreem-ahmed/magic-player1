@@ -215,10 +215,18 @@ visible = false
 [node name="Portal" parent="." unique_id=187925198 instance=ExtResource("15_wtwp4")]
 position = Vector2(3158, -21)
 
-[node name="Label" type="Label" parent="." unique_id=623039841]
+[node name="wining" type="Label" parent="." unique_id=623039841]
 offset_left = 2864.0
 offset_top = -73.0
 offset_right = 3107.0
 offset_bottom = -57.0
 theme_override_font_sizes/font_size = 11
 text = "Enter if you have score of 3 or more"
+
+[node name="Label" type="Label" parent="." unique_id=1612437156]
+offset_left = -208.0
+offset_top = -41.0
+offset_right = -8.0
+offset_bottom = -22.0
+theme_override_font_sizes/font_size = 12
+text = "Check the repo for controls"

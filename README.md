@@ -1,21 +1,19 @@
 # The Prob
 ## the demo
 https://koreem-ahmed.itch.io/the-prob
+
 ## Controls:
+movement -> arrows
 
-movement -> wasd
+jump -> C
 
-jump -> space, J, C
+light attack -> x
 
-light attack -> left click or K
+heavy.attack -> f
 
-heavy.attack -> L
+dash -> z
 
-dash -> ;, W, I
-
-The green line is the health, which appears when taking damage.
-
-The blue line is the mana of the player, which is needed to attack and make different moves.
+The health & mana bars are on the top left the player needs mana to preform attacks or to dash the flighing flames restore some health and mana when collected with the player also the player needs 3 points on the top right counter to be able to preform the spell whch makes him able to teleport using the portal in the level
 
 ## The Backstory:
 
@@ -23,4 +21,4 @@ Proby wants to go and complete this dungeon since this dungeon has a big treasur
 
 ## The Goal:
 
-Defeat all the monsters in the dungeon to get the score to go to the next level. After all this, you will get out of the cave or the dungeon.
+Defeat 3 or morre monesters to be able to get to the next level.
