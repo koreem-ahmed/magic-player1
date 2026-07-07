@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
 var speed = 300
 var dir: Vector2 = Vector2.ZERO
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	position += dir * speed * delta

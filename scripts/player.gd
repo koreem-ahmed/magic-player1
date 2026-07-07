@@ -36,7 +36,6 @@ func _physics_process(delta):
 	
 	if death:
 		if anim.animation != "die":
-			Engine.time_scale = 0.5
 			anim.play("die")
 	
 	else:

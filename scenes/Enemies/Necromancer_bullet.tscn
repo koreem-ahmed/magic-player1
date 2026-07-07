@@ -1,20 +1,57 @@
 [gd_scene format=3 uid="uid://wdvrcoscxx5a"]
 
 [ext_resource type="Script" uid="uid://dllqhodqdv2p" path="res://scripts/Necromancer_bullet.gd" id="1_s2djm"]
-[ext_resource type="Texture2D" uid="uid://dg3ug5vmvg41o" path="res://assets/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png" id="2_bbauf"]
+[ext_resource type="Texture2D" uid="uid://cdmd02fi5g27u" path="res://assets/Necromancer/Attack/Necromancers bullet.png" id="2_s2djm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbauf"]
+atlas = ExtResource("2_s2djm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynudf"]
+atlas = ExtResource("2_s2djm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_occnf"]
+atlas = ExtResource("2_s2djm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1s2h"]
+atlas = ExtResource("2_s2djm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apouw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbauf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynudf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_occnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1s2h")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_velj4"]
-size = Vector2(14, 7)
+size = Vector2(8, 8)
 
 [node name="enemy_2_bullet" type="Node2D" unique_id=195238775]
 script = ExtResource("1_s2djm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713059051]
-position = Vector2(0.25, 0)
-scale = Vector2(0.603448, 1)
-texture = ExtResource("2_bbauf")
-region_enabled = true
-region_rect = Rect2(4569.23, 42.4987, 29.5801, 22.2965)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=973130945]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.65625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_apouw")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.6477512
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1277296131]
 
@@ -23,7 +60,6 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355635114]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_velj4")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

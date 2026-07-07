@@ -1085,6 +1085,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area" unique_id=951778027]
+visible = false
 shape = SubResource("CircleShape2D_a2yeo")
 
 [node name="shot_place" type="Marker2D" parent="." unique_id=1635420167]

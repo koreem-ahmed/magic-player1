@@ -9,7 +9,7 @@ func _on_retry_pressed() -> void:
 	get_tree().paused = false
 	Global.death = false
 	Global.mana = 180
-	Engine.time_scale = 1
+	Global.score = 0
 	get_tree().reload_current_scene()
 	
 

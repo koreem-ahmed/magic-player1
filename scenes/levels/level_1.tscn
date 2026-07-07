@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://criet037u86e7" path="res://scenes/Enemies/skeleton.tscn" id="13_dnkej"]
 [ext_resource type="PackedScene" uid="uid://ds21n66t73hqt" path="res://scenes/Enemies/Necromancer.tscn" id="13_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://duxlbh2bpsnil" path="res://scenes/control/game_over.tscn" id="14_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://detxyxauvl0oh" path="res://scenes/control/portal.tscn" id="15_wtwp4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
@@ -100,9 +101,6 @@ sources/4 = SubResource("TileSetAtlasSource_iwr0g")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -3.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
-size = Vector2(173, 71.5)
 
 [node name="game" type="Node2D" unique_id=1311166411]
 script = ExtResource("1_kvuet")
@@ -197,13 +195,13 @@ position = Vector2(2327, -14)
 [node name="enemies" type="Node" parent="." unique_id=280791255]
 
 [node name="Necromancer" parent="enemies" unique_id=864292934 instance=ExtResource("13_mm8aj")]
-position = Vector2(578, 3)
-
-[node name="Necromancer2" parent="enemies" unique_id=1320122549 instance=ExtResource("13_mm8aj")]
-position = Vector2(1475, 51)
+position = Vector2(956, 67)
 
 [node name="skeleton2" parent="enemies" unique_id=1506374126 instance=ExtResource("13_dnkej")]
-position = Vector2(962, 66)
+position = Vector2(564, 1)
+
+[node name="skeleton3" parent="enemies" unique_id=1638076512 instance=ExtResource("13_dnkej")]
+position = Vector2(1539, 50)
 
 [node name="Necromancer3" parent="enemies" unique_id=102301625 instance=ExtResource("13_mm8aj")]
 position = Vector2(2908, 2)
@@ -211,14 +209,16 @@ position = Vector2(2908, 2)
 [node name="Necromancer4" parent="enemies" unique_id=1157709765 instance=ExtResource("13_mm8aj")]
 position = Vector2(3027, 2)
 
-[node name="winning" type="Area2D" parent="." unique_id=316200566]
-position = Vector2(3345, -163)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="winning" unique_id=727103487]
-position = Vector2(-6, 109)
-shape = SubResource("RectangleShape2D_trtic")
-
 [node name="Game over" parent="." unique_id=1317518215 instance=ExtResource("14_mm8aj")]
 visible = false
 
-[connection signal="body_entered" from="winning" to="." method="_on_winning_body_entered"]
+[node name="Portal" parent="." unique_id=187925198 instance=ExtResource("15_wtwp4")]
+position = Vector2(3158, -21)
+
+[node name="Label" type="Label" parent="." unique_id=623039841]
+offset_left = 2864.0
+offset_top = -73.0
+offset_right = 3107.0
+offset_bottom = -57.0
+theme_override_font_sizes/font_size = 11
+text = "Enter if you have score of 3 or more"
