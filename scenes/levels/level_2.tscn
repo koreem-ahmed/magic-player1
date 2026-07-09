@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://s4sipal3gcvq"]
 
-[ext_resource type="Script" uid="uid://cdntdm7l2h82g" path="res://scripts/level_2.gd" id="1_brxtv"]
 [ext_resource type="Texture2D" uid="uid://btvwu024dwinb" path="res://assets/desert BG/Background Terrain Elements/PNGs/Sky Horizon.png" id="2_1yj8c"]
 [ext_resource type="Texture2D" uid="uid://dk0m2jp8tbak7" path="res://assets/desert BG/Background Terrain Elements/PNGs/Sky.png" id="3_ndlae"]
 [ext_resource type="Texture2D" uid="uid://dn13l2galp28o" path="res://assets/desert BG/Background Elements/Individual PNGs/Sun.png" id="4_v8d84"]
@@ -18,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://detxyxauvl0oh" path="res://scenes/control/portal.tscn" id="13_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://duxlbh2bpsnil" path="res://scenes/control/game_over.tscn" id="14_r88tb"]
 [ext_resource type="PackedScene" uid="uid://browxicttog5d" path="res://scenes/control/sand_moving_platform.tscn" id="18_gw1l3"]
+[ext_resource type="PackedScene" uid="uid://dbw4gyuwvgh6s" path="res://scenes/control/transition_layer.tscn" id="18_p4se4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw1l3"]
 texture = ExtResource("10_v8d84")
@@ -115,7 +115,6 @@ sources/0 = SubResource("TileSetAtlasSource_gw1l3")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2hoc"]
 
 [node name="level 2" type="Node2D" unique_id=1311201296]
-script = ExtResource("1_brxtv")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=406061446]
 
@@ -270,3 +269,5 @@ text = "Enter if you have score of 3 or more"
 
 [node name="sand moving platform" parent="." unique_id=191593398 instance=ExtResource("18_gw1l3")]
 position = Vector2(696, -23)
+
+[node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("18_p4se4")]

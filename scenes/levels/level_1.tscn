@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://dqsqj6dg3d6on"]
 
-[ext_resource type="Script" uid="uid://b5cbpaao4xa62" path="res://scripts/game.gd" id="1_kvuet"]
 [ext_resource type="PackedScene" uid="uid://c5avbxl26ic0e" path="res://scenes/player/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ckp3pmiabb7io" path="res://assets/cave BG/purple_L1.png" id="2_dnkej"]
 [ext_resource type="Texture2D" uid="uid://daexndunwyuaf" path="res://assets/Tileset/pixil-frame-0.png" id="2_lnu2h"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://criet037u86e7" path="res://scenes/Enemies/skeleton.tscn" id="13_dnkej"]
 [ext_resource type="PackedScene" uid="uid://ds21n66t73hqt" path="res://scenes/Enemies/Necromancer.tscn" id="13_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://duxlbh2bpsnil" path="res://scenes/control/game_over.tscn" id="14_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://dbw4gyuwvgh6s" path="res://scenes/control/transition_layer.tscn" id="15_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://detxyxauvl0oh" path="res://scenes/control/portal.tscn" id="15_wtwp4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -102,8 +102,7 @@ sources/4 = SubResource("TileSetAtlasSource_iwr0g")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -3.0
 
-[node name="game" type="Node2D" unique_id=1311166411]
-script = ExtResource("1_kvuet")
+[node name="level 1" type="Node2D" unique_id=1311166411]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=734405558]
 
@@ -230,3 +229,5 @@ offset_right = -8.0
 offset_bottom = -22.0
 theme_override_font_sizes/font_size = 12
 text = "Check the repo for controls"
+
+[node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("15_iwr0g")]

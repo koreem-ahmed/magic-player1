@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7lynhpg7erc7" path="res://assets/snow BG/snow-bg 2.png" id="6_v16a6"]
 [ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/snow BG/snow-bg 3.png" id="7_lcxfl"]
 [ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/snow BG/snow-bg 4.png" id="8_jaw82"]
+[ext_resource type="PackedScene" uid="uid://dbw4gyuwvgh6s" path="res://scenes/control/transition_layer.tscn" id="8_ybr10"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45xpy"]
 shader = ExtResource("4_ybr10")
@@ -99,6 +100,8 @@ text = "Quit"
 z_index = 1
 position = Vector2(36, -95)
 zoom = Vector2(1.2, 1.2)
+
+[node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("8_ybr10")]
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
