@@ -23,6 +23,12 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 Global="*res://scripts/Global.gd"
 TransitionLayer="*uid://dbw4gyuwvgh6s"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
