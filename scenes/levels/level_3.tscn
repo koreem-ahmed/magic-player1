@@ -291,3 +291,12 @@ shape = SubResource("WorldBoundaryShape2D_apo5x")
 visible = false
 
 [node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("13_f6egh")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=922360788]
+position = Vector2(705, -250)
+amount = 1000
+lifetime = 11.5
+emission_shape = 3
+emission_rect_extents = Vector2(1200, 1)
+gravity = Vector2(-50, 100)
+scale_amount_max = 2.0

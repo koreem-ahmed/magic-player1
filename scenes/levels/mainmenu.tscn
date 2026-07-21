@@ -12,6 +12,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45xpy"]
 shader = ExtResource("4_ybr10")
 
+[sub_resource type="FontVariation" id="FontVariation_ybr10"]
+
+[sub_resource type="FontVariation" id="FontVariation_12qgc"]
+base_font = SubResource("FontVariation_ybr10")
+variation_embolden = 1.25
+
 [node name="Node2D" type="Control" unique_id=1981337073]
 layout_mode = 3
 anchors_preset = 0
@@ -64,18 +70,21 @@ mouse_filter = 2
 texture = ExtResource("8_jaw82")
 
 [node name="Label" type="Label" parent="." unique_id=1321557874]
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = -166.0
 offset_top = -288.0
 offset_right = 218.0
 offset_bottom = -184.0
-theme_override_colors/font_color = Color(0, 0.7137255, 0.6, 1)
+theme_override_colors/font_color = Color(0.99969536, 0.99969536, 0.99969536, 1)
+theme_override_fonts/font = SubResource("FontVariation_12qgc")
 theme_override_font_sizes/font_size = 72
 text = "The prop"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="start" type="Button" parent="." unique_id=1665059019]
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = -113.0
 offset_top = -127.0
@@ -86,7 +95,7 @@ theme_override_font_sizes/font_size = 46
 text = "Start"
 
 [node name="quit" type="Button" parent="." unique_id=115714755]
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = -112.0
 offset_top = -13.0
@@ -102,6 +111,16 @@ position = Vector2(36, -95)
 zoom = Vector2(1.2, 1.2)
 
 [node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("8_ybr10")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=423011049]
+z_index = 1
+position = Vector2(92, -378)
+amount = 1000
+lifetime = 11.5
+emission_shape = 3
+emission_rect_extents = Vector2(548, 1)
+gravity = Vector2(-50, 100)
+scale_amount_max = 2.0
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

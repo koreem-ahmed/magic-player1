@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c27eilbxoilw"]
+[gd_scene format=3 uid="uid://c27eilbxoilw"]
 
-[ext_resource type="Texture2D" uid="uid://cl48uuu0ei0sd" path="res://assets/Fogo_1 (3).png" id="1_ktous"]
+[ext_resource type="Texture2D" uid="uid://cl48uuu0ei0sd" path="res://assets/menu and bars/Fogo_1 (3).png" id="1_ktous"]
 [ext_resource type="Script" uid="uid://bgg1rh3j0esqn" path="res://scripts/flame.gd" id="1_x50ei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x50ei"]
@@ -43,18 +43,27 @@ animations = [{
 radius = 6.0
 height = 18.0
 
-[node name="flame" type="Area2D"]
+[node name="flame" type="Area2D" unique_id=1729890506]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_x50ei")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1865751495]
 position = Vector2(-18, -24)
 sprite_frames = SubResource("SpriteFrames_fhela")
 autoplay = "default"
-frame_progress = 0.204014
+frame_progress = 0.9670696
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104881539]
 shape = SubResource("CapsuleShape2D_1cfuo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1491159469]
+position = Vector2(0, -7)
+lifetime = 0.7
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(7, 1)
+gravity = Vector2(0, -56)
+color = Color(0.12156863, 0.1254902, 1, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

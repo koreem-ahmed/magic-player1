@@ -7,11 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://64r312bq3qky" path="res://assets/snow BG/snow-bg 3.png" id="4_rwf0f"]
 [ext_resource type="Texture2D" uid="uid://tar1ie1or2oy" path="res://assets/snow BG/snow-bg 4.png" id="5_c5w54"]
 [ext_resource type="Theme" uid="uid://bhd87hhhi56b6" path="res://assets/buttons.tres" id="6_y7xam"]
-[ext_resource type="FontFile" uid="uid://cikmqseskuqir" path="res://assets/IntelOneMono-VariableFont_wght.ttf" id="8_rwf0f"]
 [ext_resource type="PackedScene" uid="uid://dbw4gyuwvgh6s" path="res://scenes/control/transition_layer.tscn" id="9_rwf0f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pca5m"]
 shader = ExtResource("1_e5ouw")
+
+[sub_resource type="FontVariation" id="FontVariation_0v6ti"]
+
+[sub_resource type="FontVariation" id="FontVariation_rwf0f"]
+base_font = SubResource("FontVariation_0v6ti")
+variation_embolden = 0.86
 
 [node name="Control" type="Control" unique_id=655552222]
 layout_mode = 3
@@ -76,13 +81,14 @@ offset_left = -572.0
 offset_top = -125.0
 offset_right = 579.0
 offset_bottom = -50.0
-theme_override_fonts/font = ExtResource("8_rwf0f")
+theme_override_fonts/font = SubResource("FontVariation_rwf0f")
 theme_override_font_sizes/font_size = 80
 text = "Levels"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="level 1" type="Button" parent="." unique_id=594349456]
+z_index = 2
 layout_mode = 0
 offset_left = -309.0
 offset_top = 29.192326
@@ -93,6 +99,7 @@ text = "1"
 metadata/_edit_use_anchors_ = true
 
 [node name="level 2" type="Button" parent="." unique_id=161988016]
+z_index = 2
 layout_mode = 0
 offset_left = -59.0
 offset_top = 29.192326
@@ -103,6 +110,7 @@ text = "2"
 metadata/_edit_use_anchors_ = true
 
 [node name="level 3" type="Button" parent="." unique_id=1242220262]
+z_index = 2
 layout_mode = 0
 offset_left = 165.0
 offset_top = 19.192326
@@ -114,6 +122,7 @@ text = "3
 metadata/_edit_use_anchors_ = true
 
 [node name="level 2 bocker" type="ColorRect" parent="." unique_id=1114364450]
+z_index = 2
 layout_mode = 0
 offset_left = -54.0
 offset_top = 33.192326
@@ -124,6 +133,7 @@ color = Color(0.331181, 0.353291, 0.353292, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="level 2 bocker2" type="ColorRect" parent="." unique_id=1339116666]
+z_index = 2
 layout_mode = 0
 offset_left = 40.0
 offset_top = 26.192326
@@ -134,6 +144,7 @@ color = Color(0.331181, 0.353291, 0.353292, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="level 3 bocker" type="ColorRect" parent="." unique_id=1037350911]
+z_index = 2
 layout_mode = 0
 offset_left = 173.00006
 offset_top = 23.192387
@@ -144,6 +155,7 @@ color = Color(0.331181, 0.353291, 0.353292, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="level 3 bocker2" type="ColorRect" parent="." unique_id=829695052]
+z_index = 2
 layout_mode = 0
 offset_left = 263.0
 offset_top = 15.192295
@@ -159,6 +171,16 @@ position = Vector2(-4, 0)
 zoom = Vector2(1.2, 1.2)
 
 [node name="transition layer" parent="." unique_id=995275152 instance=ExtResource("9_rwf0f")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=738241862]
+z_index = 1
+position = Vector2(92, -378)
+amount = 1000
+lifetime = 11.5
+emission_shape = 3
+emission_rect_extents = Vector2(548, 1)
+gravity = Vector2(-50, 100)
+scale_amount_max = 2.0
 
 [connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level 2" to="." method="_on_level_2_pressed"]
